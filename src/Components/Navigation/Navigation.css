@@ -1,0 +1,28 @@
+.Navigation {
+  background-color: #efefef;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.Navigation a {
+  display: block;
+  width: 17%;
+  padding: 20px 0;
+  text-align: center;
+  margin: 10px;
+  color: rgb(24, 135, 153);
+  border-radius: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.Navigation a:hover {
+  background-color: rgb(24, 135, 153, 0.4);
+  cursor: pointer;
+  color: #fff;
+}

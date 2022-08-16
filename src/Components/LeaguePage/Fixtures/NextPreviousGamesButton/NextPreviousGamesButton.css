@@ -1,0 +1,14 @@
+.NextPreviousGamesButton {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: 15px auto;
+  justify-content: space-between;
+}
+
+.NextPreviousGamesButton2 {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: 15px auto;
+}

@@ -1,0 +1,5 @@
+.LeagueLogo img {
+  width: 550px;
+  height: 250px;
+  object-fit: contain;
+}

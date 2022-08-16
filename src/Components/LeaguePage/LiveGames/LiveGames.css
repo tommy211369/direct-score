@@ -1,0 +1,61 @@
+.LiveGames h1 {
+  font-size: 1.3em;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.LiveGames a {
+  text-decoration: none;
+  color: initial;
+}
+
+.LiveGames .game {
+  background-color: rgb(236, 236, 236);
+  margin: 15px 30px;
+  padding: 8px;
+  border-radius: 20px;
+  transition: background-color 0.4s ease;
+}
+
+.LiveGames a:hover .game {
+  background-color: rgb(24, 135, 153, 0.4);
+}
+
+.LiveGames .game .teams {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.LiveGaLiveGamesmesLigue1 a:hover .game .teams {
+  color: white;
+}
+
+.LiveGames .game .teams span {
+  display: block;
+  width: 30%;
+}
+
+.LiveGames .game .teams .score {
+  color: rgb(13, 123, 35);
+}
+
+.LiveGames .game .time {
+  text-align: center;
+  padding-bottom: 5px;
+  font-size: 0.8em;
+}
+
+.LiveGames .game .stadium {
+  margin: 5px 0;
+  text-align: center;
+  font-size: 0.8em;
+  color: rgb(101, 101, 101);
+}
+
+.LiveGames .no-live-games-message {
+  text-align: center;
+}

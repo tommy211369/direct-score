@@ -1,1 +1,15 @@
 /* Other rules */
+.App {
+  display: flex;
+  flex-direction: column;
+  background-color: #efefef;
+  min-height: 100vh;
+  font-family: "Avenir", sans-serif;
+}
+
+.App main {
+  width: 70%;
+  min-height: 100vh;
+  background-color: #fff;
+  margin: 0 auto;
+}

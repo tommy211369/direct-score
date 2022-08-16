@@ -1,0 +1,63 @@
+.GameInfos .time-place {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 10px auto;
+  font-size: 0.8em;
+}
+
+.GameInfos .game-status {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.GameInfos .teams {
+  width: 90%;
+  display: flex;
+  margin: 10px auto;
+  justify-content: space-between;
+}
+
+.GameInfos .teams > div {
+  width: 30%;
+  text-align: center;
+}
+
+.GameInfos .teams > div:nth-child(1) p,
+.GameInfos .teams > div:nth-child(3) p {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+}
+
+.GameInfos .teams > div:nth-child(1) .scorer,
+.GameInfos .teams > div:nth-child(3) .scorer {
+  display: flex;
+  background-color: rgb(211, 235, 244);
+  justify-content: space-between;
+  padding: 3px;
+}
+
+.GameInfos .teams > div:nth-child(1) .scorer span,
+.GameInfos .teams > div:nth-child(3) .scorer span {
+  font-size: 0.8em;
+}
+
+.GameInfos .teams .score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.GameInfos .teams .score span {
+  margin-bottom: 10px;
+}
+
+.GameInfos .teams .score span:nth-child(1) {
+  font-size: 3em;
+}
+
+.GameInfos .teams .score span:nth-child(2) {
+  font-size: 0.8em;
+}

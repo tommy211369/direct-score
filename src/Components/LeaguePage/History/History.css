@@ -1,0 +1,26 @@
+.History h1 {
+  font-size: 1.3em;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.History button {
+  margin-left: 20px;
+}
+
+.History a {
+  text-decoration: none;
+  color: initial;
+}
+
+.History .game {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.History a:hover .game {
+  background-color: rgb(24, 135, 153, 0.4);
+}
+
+.History a:hover .game .teams span {
+  color: #ffffff;
+}
