@@ -32,8 +32,8 @@ function LiveGames({ compet_ID, league }) {
     method: "GET",
     url: "https://live-score-api.p.rapidapi.com/scores/live.json",
     params: {
-      secret: "DWGf42808FwfuilUITW7GrI1t59nYbgB",
-      key: "qpx1pNvBl1n7TS1T",
+      secret: process.env.REACT_APP_API_SECRET,
+      key: process.env.REACT_APP_API_KEY,
       competition_id: compet_ID,
     },
     headers: {

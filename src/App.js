@@ -57,8 +57,8 @@ function App() {
     method: "GET",
     url: "https://live-score-api.p.rapidapi.com/competitions/list.json",
     params: {
-      secret: "DWGf42808FwfuilUITW7GrI1t59nYbgB",
-      key: "qpx1pNvBl1n7TS1T",
+      secret: process.env.REACT_APP_API_SECRET,
+      key: process.env.REACT_APP_API_KEY,
     },
     headers: {
       "X-RapidAPI-Key": "ab5f486435mshf09c88ef632f937p1d9aafjsn78c2c6a11acf",
