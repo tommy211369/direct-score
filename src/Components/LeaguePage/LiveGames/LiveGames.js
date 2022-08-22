@@ -4,12 +4,12 @@ import "./LiveGames.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { timeFormatter } from "../../../assets/functions";
+import { timeFormatter, leagueName } from "../../../assets/functions";
 
 // Components
 import Loading from "../../Loading/Loading";
 
-function LiveGames({ compet_ID, league }) {
+function LiveGames({ compet_ID }) {
   const [liveGames, setLiveGames] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -17,8 +17,9 @@ function LiveGames({ compet_ID, league }) {
     const getLiveGames = async () => {
       try {
         const response = await axios.request(options);
-        setLoading(false);
+
         setLiveGames(response.data.data.match);
+        setLoading(false);
       } catch (error) {
         console.log(error.response);
       }
@@ -53,7 +54,7 @@ function LiveGames({ compet_ID, league }) {
                   return (
                     <Link
                       to={`/game/${game.id}`}
-                      state={{ status: "LIVE" }}
+                      state={{ status: "LIVE", compet_ID: compet_ID }}
                       key={game.id}
                     >
                       <div className="game">

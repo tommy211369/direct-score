@@ -1,15 +1,42 @@
+.GameInfos {
+  padding-top: 30px;
+  margin-bottom: 180px;
+}
+
+.GameInfos:before {
+  content: " ";
+  background-image: url("../../../assets//img/stadium.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position: 50% 0; */
+  display: block;
+  min-width: 100%;
+  min-height: 380px;
+  z-index: 1;
+  position: absolute;
+  opacity: 0.4;
+  left: 0;
+  top: 0;
+}
+
 .GameInfos .time-place {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 50%;
-  margin: 10px auto;
-  font-size: 0.8em;
+  margin: 0 auto 50px auto;
+  font-size: 0.9em;
+  opacity: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .GameInfos .game-status {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+  opacity: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .GameInfos .teams {
@@ -17,6 +44,9 @@
   display: flex;
   margin: 10px auto;
   justify-content: space-between;
+  opacity: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .GameInfos .teams > div {
@@ -27,15 +57,21 @@
 .GameInfos .teams > div:nth-child(1) p,
 .GameInfos .teams > div:nth-child(3) p {
   font-size: 1.4em;
+  font-weight: bold;
   margin-bottom: 20px;
+}
+
+.GameInfos .teams > div:nth-child(1) div,
+.GameInfos .teams > div:nth-child(3) div {
+  background-color: rgb(211, 235, 244, 0.4);
+  padding: 3px;
+  border-radius: 10px;
 }
 
 .GameInfos .teams > div:nth-child(1) .scorer,
 .GameInfos .teams > div:nth-child(3) .scorer {
   display: flex;
-  background-color: rgb(211, 235, 244);
   justify-content: space-between;
-  padding: 3px;
 }
 
 .GameInfos .teams > div:nth-child(1) .scorer span,

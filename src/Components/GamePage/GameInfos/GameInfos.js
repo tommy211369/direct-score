@@ -1,10 +1,15 @@
 // Librairies
 import React from "react";
 import "./GameInfos.css";
-import { dateLiveFormatter, capitalizeName } from "../../../assets/functions";
+import {
+  dateLiveFormatter,
+  timeFormatter,
+  capitalizeName,
+  leagueName,
+} from "../../../assets/functions";
 import { mini_ball } from "../../../assets/img";
 
-function GameInfos({ gameEvents, gameInfos }) {
+function GameInfos({ gameEvents, gameInfos, compet_ID }) {
   const scorerListHome = [];
   const scorerListAway = [];
 
@@ -31,10 +36,11 @@ function GameInfos({ gameEvents, gameInfos }) {
       <div className="time-place">
         {/* <span>{dateLiveFormatter(gameInfos.added)}</span> */}
         {gameInfos.status !== "FINISHED" ? (
-          <span>{gameInfos.scheduled}</span>
+          <span>{timeFormatter(gameInfos.scheduled)}</span>
         ) : null}
-
-        <span>{gameInfos.location}</span>
+        &nbsp;-&nbsp;
+        <span>{gameInfos.location}</span>&nbsp;-&nbsp;
+        <span>{leagueName(compet_ID)}</span>
       </div>
       <div className="game-status">
         {gameInfos.status === "IN PLAY" ? (
@@ -50,17 +56,19 @@ function GameInfos({ gameEvents, gameInfos }) {
       <div className="teams">
         <div>
           <p>{gameInfos.home_name}</p>
-          {scorerListHome.length > 0
-            ? scorerListHome.map((scorer) => {
-                return (
-                  <div key={scorer.id} className="scorer">
-                    <img src={mini_ball} alt="mini-ball" />
-                    <span>{scorer.name}</span>
-                    <span>{scorer.time}'</span>
-                  </div>
-                );
-              })
-            : null}
+          <div>
+            {scorerListHome.length > 0
+              ? scorerListHome.map((scorer) => {
+                  return (
+                    <div key={scorer.id} className="scorer">
+                      <img src={mini_ball} alt="mini-ball" />
+                      <span>{scorer.name}</span>
+                      <span>{scorer.time}'</span>
+                    </div>
+                  );
+                })
+              : null}
+          </div>
         </div>
         <div className="score">
           <span>{gameInfos.score}</span>
@@ -71,17 +79,19 @@ function GameInfos({ gameEvents, gameInfos }) {
 
         <div>
           <p>{gameInfos.away_name}</p>
-          {scorerListAway.length > 0
-            ? scorerListAway.map((scorer) => {
-                return (
-                  <div key={scorer.id} className="scorer">
-                    <img src={mini_ball} alt="mini-ball" />
-                    <span>{scorer.name}</span>
-                    <span>{scorer.time}'</span>
-                  </div>
-                );
-              })
-            : null}
+          <div>
+            {scorerListAway.length > 0
+              ? scorerListAway.map((scorer) => {
+                  return (
+                    <div key={scorer.id} className="scorer">
+                      <img src={mini_ball} alt="mini-ball" />
+                      <span>{scorer.name}</span>
+                      <span>{scorer.time}'</span>
+                    </div>
+                  );
+                })
+              : null}
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,14 @@
+.ErrorPage {
+  margin: 50px auto;
+}
+
+.ErrorPage h1 {
+  font-size: 1.5em;
+  width: 50%;
+  font-style: oblique;
+  background-color: rgb(24, 135, 153, 0.3);
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+}

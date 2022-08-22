@@ -45,3 +45,17 @@ export const capitalizeName = (name) => {
 
   return newName;
 };
+
+export const leagueName = (id) => {
+  if (id === "1") {
+    return "Bundesliga";
+  } else if (id === "2") {
+    return "Premier league";
+  } else if (id === "3") {
+    return "Liga";
+  } else if (id === "4") {
+    return "Serie A";
+  } else if (id === "5") {
+    return "Ligue 1";
+  }
+};

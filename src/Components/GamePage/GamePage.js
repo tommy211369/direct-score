@@ -7,13 +7,16 @@ import "./GamePage.css";
 // Competitions
 import GameEvents from "./GameEvents/GameEvents";
 import GameInfos from "./GameInfos/GameInfos";
+import H2HComparaison from "./H2HComparaison/H2HComparaison";
 import Loading from "../Loading/Loading";
+import GameNavButton from "./GameNavButton/GameNavButton";
 import Button from "../Button/Button";
 
-function GamePage({ setShowHistory }) {
+function GamePage({ setShowHistory, showComparaison, setShowComparaison }) {
   const { id } = useParams();
   const location = useLocation();
-  const { status, leagueID, league } = location.state;
+  const { status, compet_ID } = location.state;
+
   const [gameEvents, setGameEvents] = useState([]);
   const [gameInfos, setGameInfos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,10 +25,10 @@ function GamePage({ setShowHistory }) {
     const getGameEvents = async () => {
       try {
         const response = await axios.request(options);
-        setLoading(false);
 
         setGameEvents(response.data.data.event);
         setGameInfos(response.data.data.match);
+        setLoading(false);
       } catch (error) {
         console.log(error.response);
       }
@@ -51,12 +54,17 @@ function GamePage({ setShowHistory }) {
   };
 
   return (
-    <div>
+    <div className="GamePage">
       {loading ? (
         <Loading />
       ) : (
         <>
-          <Link to={`/competition/${leagueID}`} state={{ league: league }}>
+          <GameInfos
+            gameEvents={gameEvents}
+            gameInfos={gameInfos}
+            compet_ID={compet_ID}
+          />
+          <Link to={`/competition/${compet_ID}`}>
             <Button
               func={() => {
                 setShowHistory(false);
@@ -65,8 +73,33 @@ function GamePage({ setShowHistory }) {
               Retour
             </Button>
           </Link>
-          <GameInfos gameEvents={gameEvents} gameInfos={gameInfos} />
-          <GameEvents gameEvents={gameEvents} gameInfos={gameInfos} />
+
+          <div className="navigation">
+            <GameNavButton
+              func={() => {
+                setShowComparaison(true);
+              }}
+            >
+              {"L'Avant Match".toUpperCase()}
+            </GameNavButton>
+
+            <GameNavButton
+              func={() => {
+                setShowComparaison(false);
+              }}
+            >
+              {"Déroulement du match".toUpperCase()}
+            </GameNavButton>
+          </div>
+
+          {showComparaison ? (
+            <H2HComparaison
+              homeID={gameInfos.home_id}
+              awayID={gameInfos.away_id}
+            />
+          ) : (
+            <GameEvents gameEvents={gameEvents} gameInfos={gameInfos} />
+          )}
         </>
       )}
     </div>

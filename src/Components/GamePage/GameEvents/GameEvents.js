@@ -15,7 +15,7 @@ import { capitalizeName } from "../../../assets/functions";
 function GameEvents({ gameEvents, gameInfos }) {
   return (
     <div className="GameEvents">
-      <h1>Événements du match :</h1>
+      <h1>Événements marquants du match :</h1>
       {gameEvents
         .map((event) => {
           return (

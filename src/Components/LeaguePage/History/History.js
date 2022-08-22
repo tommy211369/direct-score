@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./History.css";
+import { leagueName } from "../../../assets/functions";
 
 // Component
 import Loading from "../../Loading/Loading";
@@ -9,17 +10,16 @@ import GameCard from "../../GameCard/GameCard";
 import Button from "../../Button/Button";
 
 function History({
-  numberOfPages,
-  loading,
-  history,
   setShowHistory,
-  league,
   setPage,
-  id,
+  history,
+  loading,
+  numberOfPages,
+  compet_ID,
 }) {
   useEffect(() => {
     setPage(numberOfPages);
-  }, [id]);
+  }, [compet_ID]);
 
   return (
     <div className="History">
@@ -28,8 +28,8 @@ function History({
           <Loading />
         ) : (
           <>
-            <h1>Résultats des matchs de {league.name} </h1>
-            <Link to={`/competition/${league.id}`} state={{ league: league }}>
+            <h1>Résultats des matchs de {leagueName(compet_ID)}</h1>
+            <Link to={`/competition/${compet_ID}`}>
               <Button
                 func={() => {
                   setShowHistory(false);
@@ -45,8 +45,7 @@ function History({
                     to={`/game/${game.id}`}
                     state={{
                       status: "FINISHED",
-                      leagueID: league.id,
-                      league: league,
+                      compet_ID: compet_ID,
                     }}
                     key={game.id}
                   >

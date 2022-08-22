@@ -1,8 +1,9 @@
 // Librairies
 import { useState, useEffect } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./LeaguePage.css";
 import axios from "axios";
+import { leagueName } from "../../assets/functions";
 
 // Components
 import History from "./History/History";
@@ -14,8 +15,6 @@ import Loading from "../Loading/Loading";
 
 function LeaguePage({ showHistory, setShowHistory }) {
   const { id } = useParams();
-  const location = useLocation();
-  const { league } = location.state;
 
   const [history, setHistory] = useState([]);
   const [numberOfPages, setNumberOfPages] = useState();
@@ -34,7 +33,6 @@ function LeaguePage({ showHistory, setShowHistory }) {
 
       setNumberOfPages(response.data.data.total_pages);
       setHistory(response.data.data.match);
-
       setLoading(false);
     } catch (error) {
       console.log(error.response);
@@ -73,7 +71,7 @@ function LeaguePage({ showHistory, setShowHistory }) {
               setShowHistory(true);
             }}
           >
-            Voir les matchs de {league.name} déjà joués
+            Voir les résultats des matchs de {leagueName(id)}
           </Button>
         </div>
       ) : null}
@@ -81,18 +79,16 @@ function LeaguePage({ showHistory, setShowHistory }) {
       {showHistory ? (
         <History
           setShowHistory={setShowHistory}
-          league={league}
           setPage={setPage}
-          page={page}
           history={history}
           loading={loading}
           numberOfPages={numberOfPages}
-          id={id}
+          compet_ID={id}
         />
       ) : (
         <>
-          <LiveGames compet_ID={id} league={league} />
-          <Fixtures compet_ID={id} league={league} />
+          <LiveGames compet_ID={id} />
+          <Fixtures compet_ID={id} />
         </>
       )}
     </div>

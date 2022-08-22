@@ -3,6 +3,7 @@ import React from "react";
 import "./Fixtures.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { leagueName } from "../../../assets/functions";
 
 // Components
 import Loading from "../../Loading/Loading";
@@ -12,7 +13,7 @@ import GameCard from "../../GameCard/GameCard";
 // secret "DWGf42808FwfuilUITW7GrI1t59nYbgB"
 // key "qpx1pNvBl1n7TS1T"
 
-function Fixtures({ compet_ID, league }) {
+function Fixtures({ compet_ID }) {
   const [fixtures, setFixtures] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -21,8 +22,8 @@ function Fixtures({ compet_ID, league }) {
     const getFixtures = async () => {
       try {
         const response = await axios.request(options);
-        setLoading(false);
         setFixtures(response.data.data.fixtures);
+        setLoading(false);
       } catch (error) {
         console.log(error.response);
       }
@@ -53,7 +54,7 @@ function Fixtures({ compet_ID, league }) {
         <Loading />
       ) : (
         <div>
-          <h1>Les matchs de {league.name} à venir</h1>
+          <h1>Les matchs de {leagueName(compet_ID)} à venir</h1>
           <NextPreviousGamesButton page={page} setPage={setPage} />
           {fixtures.map((game) => {
             return (

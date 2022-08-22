@@ -3,21 +3,14 @@ import React from "react";
 import "./Navigation.css";
 import { Link } from "react-router-dom";
 
-function Navigation({
-  ligue1,
-  premierLeague,
-  liga,
-  bundesliga,
-  serieA,
-  setShowHistory,
-}) {
+function Navigation({ setShowHistory, setShowComparaison }) {
   return (
     <nav className="Navigation">
       <Link
         to={`/competition/5`}
-        state={{ league: ligue1 }}
         onClick={() => {
           setShowHistory(false);
+          setShowComparaison(false);
         }}
       >
         Ligue 1
@@ -25,63 +18,63 @@ function Navigation({
 
       <Link
         to={`/competition/2`}
-        state={{ league: premierLeague }}
         onClick={() => {
           setShowHistory(false);
+          setShowComparaison(false);
         }}
       >
         Premier League
       </Link>
       <Link
         to={`/competition/3`}
-        state={{ league: liga }}
         onClick={() => {
           setShowHistory(false);
+          setShowComparaison(false);
         }}
       >
         Liga
       </Link>
       <Link
         to={`/competition/1`}
-        state={{ league: bundesliga }}
         onClick={() => {
           setShowHistory(false);
+          setShowComparaison(false);
         }}
       >
         Bundesliga
       </Link>
       <Link
         to={`/competition/4`}
-        state={{ league: serieA }}
         onClick={() => {
           setShowHistory(false);
+          setShowComparaison(false);
         }}
       >
         Serie A
       </Link>
       <Link
         to={`/competition/4`}
-        state={{ league: serieA }}
         onClick={() => {
           setShowHistory(false);
+          setShowComparaison(false);
         }}
       >
         UEFA Champion's League
       </Link>
       <Link
         to={`/competition/4`}
-        state={{ league: serieA }}
         onClick={() => {
           setShowHistory(false);
+          setShowComparaison(false);
         }}
       >
         UEFA Europa league
       </Link>
       <Link
         to={`/competition/4`}
-        state={{ league: serieA }}
         onClick={() => {
           setShowHistory(false);
+          setShowComparaison(false);
         }}
       >
         UEFA Conference League

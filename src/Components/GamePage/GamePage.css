@@ -1,0 +1,17 @@
+.GamePage {
+  padding-top: 20px;
+  position: relative;
+}
+
+.GamePage > a {
+  margin: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.GamePage .navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 25px auto;
+}
