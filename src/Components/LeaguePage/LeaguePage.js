@@ -18,7 +18,7 @@ function LeaguePage({ showHistory, setShowHistory }) {
 
   const [history, setHistory] = useState([]);
   const [numberOfPages, setNumberOfPages] = useState();
-  const [page, setPage] = useState();
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -33,6 +33,7 @@ function LeaguePage({ showHistory, setShowHistory }) {
 
       setNumberOfPages(response.data.data.total_pages);
       setHistory(response.data.data.match);
+      console.log("History :", history);
       setLoading(false);
     } catch (error) {
       console.log(error.response);

@@ -15,6 +15,7 @@ import ErrorPage from "./Components/ErrorPage/ErrorPage";
 function App() {
   const [showHistory, setShowHistory] = useState(false);
   const [showComparaison, setShowComparaison] = useState(false);
+  const [showGameStats, setShowGameStats] = useState(false);
 
   return (
     <div className="App">
@@ -25,6 +26,7 @@ function App() {
             <Navigation
               setShowHistory={setShowHistory}
               setShowComparaison={setShowComparaison}
+              setShowGameStats={setShowGameStats}
             />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -44,6 +46,8 @@ function App() {
                     setShowHistory={setShowHistory}
                     showComparaison={showComparaison}
                     setShowComparaison={setShowComparaison}
+                    showGameStats={showGameStats}
+                    setShowGameStats={setShowGameStats}
                   />
                 }
               />

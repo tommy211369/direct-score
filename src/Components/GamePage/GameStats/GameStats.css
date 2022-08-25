@@ -1,0 +1,13 @@
+.GameStats {
+  position: absolute;
+  top: 520px;
+  margin-top: 30px;
+  min-height: 100%;
+  width: 100%;
+}
+
+.GameStats h1 {
+  font-weight: bold;
+  color: rgb(24, 135, 153);
+  text-align: center;
+}

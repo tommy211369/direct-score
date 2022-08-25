@@ -1,7 +1,13 @@
+.GameEvents {
+  position: absolute;
+  top: 520px;
+  margin-top: 20px;
+}
+
 .GameEvents h1 {
   font-weight: bold;
   color: rgb(24, 135, 153);
-  margin: 50px 0 30px 20px;
+  margin-left: 20px;
 }
 
 .GameEvents .event,

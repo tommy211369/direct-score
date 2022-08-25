@@ -8,11 +8,18 @@ import "./GamePage.css";
 import GameEvents from "./GameEvents/GameEvents";
 import GameInfos from "./GameInfos/GameInfos";
 import H2HComparaison from "./H2HComparaison/H2HComparaison";
+import GameStats from "./GameStats/GameStats";
 import Loading from "../Loading/Loading";
 import GameNavButton from "./GameNavButton/GameNavButton";
 import Button from "../Button/Button";
 
-function GamePage({ setShowHistory, showComparaison, setShowComparaison }) {
+function GamePage({
+  setShowHistory,
+  showComparaison,
+  setShowComparaison,
+  showGameStats,
+  setShowGameStats,
+}) {
   const { id } = useParams();
   const location = useLocation();
   const { status, compet_ID } = location.state;
@@ -78,6 +85,7 @@ function GamePage({ setShowHistory, showComparaison, setShowComparaison }) {
             <GameNavButton
               func={() => {
                 setShowComparaison(true);
+                setShowGameStats(false);
               }}
             >
               {"L'Avant Match".toUpperCase()}
@@ -86,17 +94,29 @@ function GamePage({ setShowHistory, showComparaison, setShowComparaison }) {
             <GameNavButton
               func={() => {
                 setShowComparaison(false);
+                setShowGameStats(false);
               }}
             >
               {"Déroulement du match".toUpperCase()}
             </GameNavButton>
+
+            <GameNavButton
+              func={() => {
+                setShowComparaison(false);
+                setShowGameStats(true);
+              }}
+            >
+              {"Les Stats du Match".toUpperCase()}
+            </GameNavButton>
           </div>
 
-          {showComparaison ? (
+          {showComparaison && !showGameStats ? (
             <H2HComparaison
               homeID={gameInfos.home_id}
               awayID={gameInfos.away_id}
             />
+          ) : !showComparaison && showGameStats ? (
+            <GameStats gameID={id} />
           ) : (
             <GameEvents gameEvents={gameEvents} gameInfos={gameInfos} />
           )}

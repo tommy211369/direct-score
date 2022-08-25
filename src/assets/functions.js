@@ -59,3 +59,8 @@ export const leagueName = (id) => {
     return "Ligue 1";
   }
 };
+
+export const split = (word) => {
+  const str = word.split(":");
+  console.log("STR :", str);
+};

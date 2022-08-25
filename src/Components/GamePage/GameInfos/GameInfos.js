@@ -56,7 +56,7 @@ function GameInfos({ gameEvents, gameInfos, compet_ID }) {
       <div className="teams">
         <div>
           <p>{gameInfos.home_name}</p>
-          <div>
+          <div className="scorerList">
             {scorerListHome.length > 0
               ? scorerListHome.map((scorer) => {
                   return (
@@ -79,7 +79,7 @@ function GameInfos({ gameEvents, gameInfos, compet_ID }) {
 
         <div>
           <p>{gameInfos.away_name}</p>
-          <div>
+          <div className="scorerList">
             {scorerListAway.length > 0
               ? scorerListAway.map((scorer) => {
                   return (

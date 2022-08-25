@@ -3,7 +3,7 @@ import React from "react";
 import "./Navigation.css";
 import { Link } from "react-router-dom";
 
-function Navigation({ setShowHistory, setShowComparaison }) {
+function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
   return (
     <nav className="Navigation">
       <Link
@@ -11,6 +11,7 @@ function Navigation({ setShowHistory, setShowComparaison }) {
         onClick={() => {
           setShowHistory(false);
           setShowComparaison(false);
+          setShowGameStats(false);
         }}
       >
         Ligue 1
@@ -21,6 +22,7 @@ function Navigation({ setShowHistory, setShowComparaison }) {
         onClick={() => {
           setShowHistory(false);
           setShowComparaison(false);
+          setShowGameStats(false);
         }}
       >
         Premier League
@@ -30,6 +32,7 @@ function Navigation({ setShowHistory, setShowComparaison }) {
         onClick={() => {
           setShowHistory(false);
           setShowComparaison(false);
+          setShowGameStats(false);
         }}
       >
         Liga
@@ -39,6 +42,7 @@ function Navigation({ setShowHistory, setShowComparaison }) {
         onClick={() => {
           setShowHistory(false);
           setShowComparaison(false);
+          setShowGameStats(false);
         }}
       >
         Bundesliga
@@ -48,6 +52,7 @@ function Navigation({ setShowHistory, setShowComparaison }) {
         onClick={() => {
           setShowHistory(false);
           setShowComparaison(false);
+          setShowGameStats(false);
         }}
       >
         Serie A
@@ -57,6 +62,7 @@ function Navigation({ setShowHistory, setShowComparaison }) {
         onClick={() => {
           setShowHistory(false);
           setShowComparaison(false);
+          setShowGameStats(false);
         }}
       >
         UEFA Champion's League
@@ -66,6 +72,7 @@ function Navigation({ setShowHistory, setShowComparaison }) {
         onClick={() => {
           setShowHistory(false);
           setShowComparaison(false);
+          setShowGameStats(false);
         }}
       >
         UEFA Europa league
@@ -75,6 +82,7 @@ function Navigation({ setShowHistory, setShowComparaison }) {
         onClick={() => {
           setShowHistory(false);
           setShowComparaison(false);
+          setShowGameStats(false);
         }}
       >
         UEFA Conference League
