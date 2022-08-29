@@ -44,19 +44,15 @@ function GameInfos({ gameEvents, gameInfos, compet_ID }) {
       <div className="time-place">
         {/* <span>{dateLiveFormatter(gameInfos.added)}</span> */}
         {gameInfos.status !== "FINISHED" ? (
-          <span>{timeFormatter(gameInfos.scheduled)}</span>
+          <span>{timeFormatter(gameInfos.scheduled)} &nbsp;-&nbsp;</span>
         ) : null}
-        &nbsp;-&nbsp;
-        <span>{gameInfos.location}</span>&nbsp;-&nbsp;
-        <span>{leagueName(compet_ID)}</span>
+        <span>{gameInfos.location}</span>
       </div>
       <div className="game-status">
         {gameInfos.status === "IN PLAY" ? (
           <p>{gameInfos.time}'</p>
         ) : gameInfos.status === "HALF TIME BREAK" ? (
           <p>Mi-Temps</p>
-        ) : gameInfos.status === "FINISHED" ? (
-          <p>Fin du Match</p>
         ) : gameInfos.status === "ADDED TIME" ? (
           <p>{gameInfos.time}</p>
         ) : null}

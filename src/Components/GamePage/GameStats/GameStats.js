@@ -40,7 +40,7 @@ function GameStats({ gameID }) {
           <h1>Les Statistiques du Match</h1>
           {statsDataFormat(gameStats).map((stat, index) => {
             return (
-              <div key={index}>
+              <div key={index} className="stat">
                 <span>{stat[0]}</span>
                 <span>{translate(stat[1])}</span>
                 <span>{stat[2]}</span>

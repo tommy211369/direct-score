@@ -99,6 +99,7 @@ function GamePage({
             <H2HComparaison
               homeID={gameInfos.home_id}
               awayID={gameInfos.away_id}
+              compet_ID={compet_ID}
             />
           ) : !showComparaison && showGameStats ? (
             <GameStats gameID={id} />

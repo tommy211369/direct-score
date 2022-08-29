@@ -1,12 +1,13 @@
 // Libraries
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./H2HComparaison.css";
 import axios from "axios";
 
 // Component
 import Loading from "../../Loading/Loading";
 
-function H2HComparaison({ homeID, awayID }) {
+function H2HComparaison({ homeID, awayID, compet_ID }) {
   const [loading, setLoading] = useState(true);
   const [homeTeam, setHomeTeam] = useState();
   const [awayTeam, setAwayTeam] = useState();
@@ -96,7 +97,15 @@ function H2HComparaison({ homeID, awayID }) {
                 return (
                   <li key={game.id}>
                     <span>{game.home_name}</span>
-                    <span>{game.ft_score}</span>
+                    <Link
+                      to={`/game/${game.id}`}
+                      state={{
+                        status: "FINISHED",
+                        compet_ID: compet_ID,
+                      }}
+                    >
+                      <span>{game.ft_score}</span>
+                    </Link>
                     <span>{game.away_name}</span>
                   </li>
                 );
@@ -108,7 +117,15 @@ function H2HComparaison({ homeID, awayID }) {
                 return (
                   <li key={game.id}>
                     <span>{game.home_name}</span>
-                    <span>{game.ft_score}</span>
+                    <Link
+                      to={`/game/${game.id}`}
+                      state={{
+                        status: "FINISHED",
+                        compet_ID: compet_ID,
+                      }}
+                    >
+                      <span>{game.ft_score}</span>
+                    </Link>
                     <span>{game.away_name}</span>
                   </li>
                 );

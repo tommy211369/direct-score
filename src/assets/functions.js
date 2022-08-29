@@ -57,6 +57,8 @@ export const leagueName = (id) => {
     return "Serie A";
   } else if (id === "5") {
     return "Ligue 1";
+  } else {
+    return null;
   }
 };
 
