@@ -2,14 +2,14 @@
 import { useState, useEffect } from "react";
 import "./GameStats.css";
 import axios from "axios";
-import { split } from "../../../assets/functions";
+import { statsDataFormat, translate } from "../../../assets/functions";
 
 // Component
 import Loading from "../../Loading/Loading";
 
 function GameStats({ gameID }) {
   const [loading, setLoading] = useState(true);
-  const [gameStats, setGameStats] = useState(true);
+  const [gameStats, setGameStats] = useState();
 
   useEffect(() => {
     const getGameStats = async () => {
@@ -19,8 +19,8 @@ function GameStats({ gameID }) {
         const response = await axios.get(
           `http://localhost:4000/game/stats/${gameID}`
         );
-        console.log(response.data);
         setGameStats(response.data);
+
         setLoading(false);
       } catch (error) {
         console.log(error.response);
@@ -38,7 +38,15 @@ function GameStats({ gameID }) {
         <>
           {" "}
           <h1>Les Statistiques du Match</h1>
-          {split(gameStats.attacks)}
+          {statsDataFormat(gameStats).map((stat, index) => {
+            return (
+              <div key={index}>
+                <span>{stat[0]}</span>
+                <span>{translate(stat[1])}</span>
+                <span>{stat[2]}</span>
+              </div>
+            );
+          })}
         </>
       )}
     </div>

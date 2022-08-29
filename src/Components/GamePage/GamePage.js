@@ -73,7 +73,7 @@ function GamePage({
                 setShowGameStats(false);
               }}
             >
-              {"L'Avant Match".toUpperCase()}
+              {"Le Duel".toUpperCase()}
             </GameNavButton>
 
             <GameNavButton

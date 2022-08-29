@@ -14,7 +14,11 @@ function GameInfos({ gameEvents, gameInfos, compet_ID }) {
   const scorerListAway = [];
 
   for (let i = 0; i < gameEvents.length; i++) {
-    if (gameEvents[i].event === "GOAL" && gameEvents[i].home_away === "h") {
+    if (
+      (gameEvents[i].event === "GOAL" ||
+        gameEvents[i].event === "GOAL_PENALTY") &&
+      gameEvents[i].home_away === "h"
+    ) {
       scorerListHome.push({
         name: capitalizeName(gameEvents[i].player),
         id: gameEvents[i].id,
@@ -22,7 +26,11 @@ function GameInfos({ gameEvents, gameInfos, compet_ID }) {
       });
     }
 
-    if (gameEvents[i].event === "GOAL" && gameEvents[i].home_away === "a") {
+    if (
+      (gameEvents[i].event === "GOAL" ||
+        gameEvents[i].event === "GOAL_PENALTY") &&
+      gameEvents[i].home_away === "a"
+    ) {
       scorerListAway.push({
         name: capitalizeName(gameEvents[i].player),
         id: gameEvents[i].id,
