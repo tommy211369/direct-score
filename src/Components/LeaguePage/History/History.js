@@ -1,5 +1,4 @@
 // Librairies
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./History.css";
 import { leagueName } from "../../../assets/functions";
@@ -9,18 +8,7 @@ import Loading from "../../Loading/Loading";
 import GameCard from "../../GameCard/GameCard";
 import Button from "../../Button/Button";
 
-function History({
-  setShowHistory,
-  setPage,
-  history,
-  loading,
-  numberOfPages,
-  compet_ID,
-}) {
-  useEffect(() => {
-    setPage(numberOfPages);
-  }, [compet_ID]);
-
+function History({ setShowHistory, history, loading, compet_ID }) {
   return (
     <div className="History">
       <>

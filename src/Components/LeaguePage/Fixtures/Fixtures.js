@@ -10,9 +10,6 @@ import Loading from "../../Loading/Loading";
 import NextPreviousGamesButton from "./NextPreviousGamesButton/NextPreviousGames";
 import GameCard from "../../GameCard/GameCard";
 
-// secret "DWGf42808FwfuilUITW7GrI1t59nYbgB"
-// key "qpx1pNvBl1n7TS1T"
-
 function Fixtures({ compet_ID }) {
   const [fixtures, setFixtures] = useState([]);
   const [page, setPage] = useState(1);
@@ -21,8 +18,11 @@ function Fixtures({ compet_ID }) {
   useEffect(() => {
     const getFixtures = async () => {
       try {
-        const response = await axios.request(options);
-        setFixtures(response.data.data.fixtures);
+        const response = await axios.get(
+          `http://localhost:4000/fixtures?competition_id=${compet_ID}&page=${page}`
+        );
+
+        setFixtures(response.data.fixtures);
         setLoading(false);
       } catch (error) {
         console.log(error.response);
@@ -31,22 +31,6 @@ function Fixtures({ compet_ID }) {
     setLoading(true);
     getFixtures();
   }, [compet_ID, page]);
-
-  // Variables
-  const options = {
-    method: "GET",
-    url: "https://live-score-api.p.rapidapi.com/fixtures/matches.json",
-    params: {
-      secret: process.env.REACT_APP_API_SECRET,
-      key: process.env.REACT_APP_API_KEY,
-      competition_id: compet_ID,
-      page: page,
-    },
-    headers: {
-      "X-RapidAPI-Key": "ab5f486435mshf09c88ef632f937p1d9aafjsn78c2c6a11acf",
-      "X-RapidAPI-Host": "live-score-api.p.rapidapi.com",
-    },
-  };
 
   return (
     <div className="Fixtures">

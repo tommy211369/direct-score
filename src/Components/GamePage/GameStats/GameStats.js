@@ -14,9 +14,13 @@ function GameStats({ gameID }) {
   useEffect(() => {
     const getGameStats = async () => {
       try {
-        const response = await axios.request(options);
-        console.log(response.data.data);
-        setGameStats(response.data.data);
+        // `https://directscore.herokuapp.com/game/stats/${gameID}`;
+        // `http://localhost:4000/game/stats/${gameID}`;
+        const response = await axios.get(
+          `http://localhost:4000/game/stats/${gameID}`
+        );
+        console.log(response.data);
+        setGameStats(response.data);
         setLoading(false);
       } catch (error) {
         console.log(error.response);
@@ -25,21 +29,6 @@ function GameStats({ gameID }) {
     setLoading(true);
     getGameStats();
   }, [gameID]);
-
-  // Variables
-  const options = {
-    method: "GET",
-    url: "https://live-score-api.p.rapidapi.com/matches/stats.json",
-    params: {
-      secret: process.env.REACT_APP_API_SECRET,
-      key: process.env.REACT_APP_API_KEY,
-      match_id: gameID,
-    },
-    headers: {
-      "X-RapidAPI-Key": "ab5f486435mshf09c88ef632f937p1d9aafjsn78c2c6a11acf",
-      "X-RapidAPI-Host": "live-score-api.p.rapidapi.com",
-    },
-  };
 
   return (
     <div className="GameStats">

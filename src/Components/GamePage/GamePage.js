@@ -22,7 +22,7 @@ function GamePage({
 }) {
   const { id } = useParams();
   const location = useLocation();
-  const { status, compet_ID } = location.state;
+  const { compet_ID } = location.state;
 
   const [gameEvents, setGameEvents] = useState([]);
   const [gameInfos, setGameInfos] = useState([]);
@@ -31,10 +31,10 @@ function GamePage({
   useEffect(() => {
     const getGameEvents = async () => {
       try {
-        const response = await axios.request(options);
+        const response = await axios.get(`http://localhost:4000/game/${id}`);
 
-        setGameEvents(response.data.data.event);
-        setGameInfos(response.data.data.match);
+        setGameEvents(response.data.events);
+        setGameInfos(response.data.infos);
         setLoading(false);
       } catch (error) {
         console.log(error.response);
@@ -44,21 +44,6 @@ function GamePage({
     setLoading(true);
     getGameEvents();
   }, [id]);
-
-  // Variables
-  const options = {
-    method: "GET",
-    url: "https://live-score-api.p.rapidapi.com/scores/events.json",
-    params: {
-      secret: process.env.REACT_APP_API_SECRET,
-      key: process.env.REACT_APP_API_KEY,
-      id: id,
-    },
-    headers: {
-      "X-RapidAPI-Key": "ab5f486435mshf09c88ef632f937p1d9aafjsn78c2c6a11acf",
-      "X-RapidAPI-Host": "live-score-api.p.rapidapi.com",
-    },
-  };
 
   return (
     <div className="GamePage">

@@ -4,7 +4,7 @@ import "./LiveGames.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { timeFormatter, leagueName } from "../../../assets/functions";
+import { timeFormatter } from "../../../assets/functions";
 
 // Components
 import Loading from "../../Loading/Loading";
@@ -16,9 +16,12 @@ function LiveGames({ compet_ID }) {
   useEffect(() => {
     const getLiveGames = async () => {
       try {
-        const response = await axios.request(options);
+        const response = await axios.get(
+          `http://localhost:4000/livegames?competition_id=${compet_ID}`
+        );
 
-        setLiveGames(response.data.data.match);
+        console.log(response.data);
+        setLiveGames(response.data);
         setLoading(false);
       } catch (error) {
         console.log(error.response);
@@ -28,20 +31,6 @@ function LiveGames({ compet_ID }) {
     getLiveGames();
   }, [compet_ID]);
 
-  // Variables
-  const options = {
-    method: "GET",
-    url: "https://live-score-api.p.rapidapi.com/scores/live.json",
-    params: {
-      secret: process.env.REACT_APP_API_SECRET,
-      key: process.env.REACT_APP_API_KEY,
-      competition_id: compet_ID,
-    },
-    headers: {
-      "X-RapidAPI-Key": "ab5f486435mshf09c88ef632f937p1d9aafjsn78c2c6a11acf",
-      "X-RapidAPI-Host": "live-score-api.p.rapidapi.com",
-    },
-  };
   return (
     <div className="LiveGames">
       {loading ? (

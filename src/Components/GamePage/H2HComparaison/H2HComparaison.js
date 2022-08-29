@@ -14,40 +14,25 @@ function H2HComparaison({ homeID, awayID }) {
   const [awayTeamLast6, setAwayTeamLast6] = useState();
 
   useEffect(() => {
+    const getComparaison = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:4000/h2h?team1_id=${homeID}&team2_id=${awayID}`
+        );
+        console.log(response.data);
+        setHomeTeam(response.data.homeTeam);
+        setAwayTeam(response.data.awayTeam);
+        setHomeTeamLast6(response.data.homeTeamLast6);
+        setAwayTeamLast6(response.data.awayTeamLast6);
+        setLoading(false);
+      } catch (error) {
+        console.log(error.response);
+      }
+    };
+
     setLoading(true);
     getComparaison();
-  }, []);
-
-  // Fonctions
-  const getComparaison = async () => {
-    try {
-      const response = await axios.request(options);
-      console.log(response.data.data);
-      setHomeTeam(response.data.data.team1);
-      setAwayTeam(response.data.data.team2);
-      setHomeTeamLast6(response.data.data.team1_last_6);
-      setAwayTeamLast6(response.data.data.team2_last_6);
-      setLoading(false);
-    } catch (error) {
-      console.log(error.response);
-    }
-  };
-
-  // Variables
-  const options = {
-    method: "GET",
-    url: "https://live-score-api.p.rapidapi.com/teams/head2head.json",
-    params: {
-      secret: "DWGf42808FwfuilUITW7GrI1t59nYbgB",
-      key: "qpx1pNvBl1n7TS1T",
-      team2_id: awayID,
-      team1_id: homeID,
-    },
-    headers: {
-      "X-RapidAPI-Key": "ab5f486435mshf09c88ef632f937p1d9aafjsn78c2c6a11acf",
-      "X-RapidAPI-Host": "live-score-api.p.rapidapi.com",
-    },
-  };
+  }, [awayID, homeID]);
 
   return (
     <div className="H2HComparaison">
