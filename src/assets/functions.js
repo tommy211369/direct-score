@@ -57,6 +57,12 @@ export const leagueName = (id) => {
     return "Serie A";
   } else if (id === "5") {
     return "Ligue 1";
+  } else if (id === "244") {
+    return "UEFA Ligue des Champions";
+  } else if (id === "245") {
+    return "UEFA Europa League";
+  } else if (id === "446") {
+    return "UEFA Conference League";
   } else {
     return null;
   }

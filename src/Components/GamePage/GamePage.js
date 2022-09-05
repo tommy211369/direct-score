@@ -31,6 +31,8 @@ function GamePage({
   useEffect(() => {
     const getGameEvents = async () => {
       try {
+        // `https://directscore.onrender.com/game/${id}`
+        // `http://localhost:4000/game/${id}`
         const response = await axios.get(`http://localhost:4000/game/${id}`);
 
         setGameEvents(response.data.events);
@@ -51,11 +53,7 @@ function GamePage({
         <Loading />
       ) : (
         <>
-          <GameInfos
-            gameEvents={gameEvents}
-            gameInfos={gameInfos}
-            compet_ID={compet_ID}
-          />
+          <GameInfos gameEvents={gameEvents} gameInfos={gameInfos} />
           <Link to={`/competition/${compet_ID}`}>
             <Button
               func={() => {

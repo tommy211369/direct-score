@@ -18,6 +18,8 @@ function H2HComparaison({ homeID, awayID, compet_ID }) {
     const getComparaison = async () => {
       try {
         const response = await axios.get(
+          // `https://directscore.onrender.com/h2h?team1_id=${homeID}&team2_id=${awayID}`
+          // `http://localhost:4000/h2h?team1_id=${homeID}&team2_id=${awayID}`
           `http://localhost:4000/h2h?team1_id=${homeID}&team2_id=${awayID}`
         );
         console.log(response.data);
@@ -100,7 +102,6 @@ function H2HComparaison({ homeID, awayID, compet_ID }) {
                     <Link
                       to={`/game/${game.id}`}
                       state={{
-                        status: "FINISHED",
                         compet_ID: compet_ID,
                       }}
                     >

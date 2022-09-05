@@ -9,7 +9,7 @@ import {
 } from "../../../assets/functions";
 import { mini_ball } from "../../../assets/img";
 
-function GameInfos({ gameEvents, gameInfos, compet_ID }) {
+function GameInfos({ gameEvents, gameInfos }) {
   const scorerListHome = [];
   const scorerListAway = [];
 

@@ -17,6 +17,8 @@ function LiveGames({ compet_ID }) {
     const getLiveGames = async () => {
       try {
         const response = await axios.get(
+          // `https://directscore.onrender.com/livegames?competition_id=${compet_ID}`
+          // `http://localhost:4000/livegames?competition_id=${compet_ID}`
           `http://localhost:4000/livegames?competition_id=${compet_ID}`
         );
 

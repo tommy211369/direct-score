@@ -58,7 +58,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
         Serie A
       </Link>
       <Link
-        to={`/competition/4`}
+        to={`/competition/244`}
         onClick={() => {
           setShowHistory(false);
           setShowComparaison(false);
@@ -68,7 +68,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
         UEFA Champion's League
       </Link>
       <Link
-        to={`/competition/4`}
+        to={`/competition/245`}
         onClick={() => {
           setShowHistory(false);
           setShowComparaison(false);
@@ -78,7 +78,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
         UEFA Europa league
       </Link>
       <Link
-        to={`/competition/4`}
+        to={`/competition/446`}
         onClick={() => {
           setShowHistory(false);
           setShowComparaison(false);
