@@ -17,7 +17,7 @@ function GameStats({ gameID }) {
         // ``https://directscore.onrender.com/game/stats/${gameID}`;
         // `http://localhost:4000/game/stats/${gameID}`;
         const response = await axios.get(
-          `http://localhost:4000/game/stats/${gameID}`
+          `https://directscore.onrender.com/game/stats/${gameID}`
         );
         setGameStats(response.data);
 

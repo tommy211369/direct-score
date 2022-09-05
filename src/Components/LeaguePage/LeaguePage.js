@@ -26,7 +26,7 @@ function LeaguePage({ showHistory, setShowHistory }) {
         const response = await axios.get(
           // `https://directscore.onrender.com/history?competition_id=${id}&page=${page}`
           // `http://localhost:4000/history?competition_id=${id}&page=${page}`
-          `http://localhost:4000/history?competition_id=${id}&page=${page}`
+          `https://directscore.onrender.com/history?competition_id=${id}&page=${page}`
         );
 
         setHistory(response.data);
