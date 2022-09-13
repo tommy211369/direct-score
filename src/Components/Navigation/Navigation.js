@@ -3,6 +3,9 @@ import React from "react";
 import "./Navigation.css";
 import { Link } from "react-router-dom";
 
+// Material UI
+import Button from "@mui/material/Button";
+
 function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
   return (
     <nav className="Navigation">
@@ -14,7 +17,10 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
           setShowGameStats(false);
         }}
       >
-        Ligue 1
+        <Button variant="contained" color="primary">
+          {" "}
+          Ligue 1
+        </Button>
       </Link>
 
       <Link
@@ -25,7 +31,10 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
           setShowGameStats(false);
         }}
       >
-        Premier League
+        <Button variant="contained" color="primary">
+          {" "}
+          Premier league
+        </Button>
       </Link>
       <Link
         to={`/competition/3`}
@@ -35,7 +44,10 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
           setShowGameStats(false);
         }}
       >
-        Liga
+        <Button variant="contained" color="primary">
+          {" "}
+          Liga
+        </Button>
       </Link>
       <Link
         to={`/competition/1`}
@@ -45,7 +57,10 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
           setShowGameStats(false);
         }}
       >
-        Bundesliga
+        <Button variant="contained" color="primary">
+          {" "}
+          Bundesliga
+        </Button>
       </Link>
       <Link
         to={`/competition/4`}
@@ -55,9 +70,12 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
           setShowGameStats(false);
         }}
       >
-        Serie A
+        <Button variant="contained" color="primary">
+          {" "}
+          Serie A
+        </Button>
       </Link>
-      <Link
+      {/* <Link
         to={`/competition/244`}
         onClick={() => {
           setShowHistory(false);
@@ -86,7 +104,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
         }}
       >
         UEFA Conference League
-      </Link>
+      </Link> */}
     </nav>
   );
 }

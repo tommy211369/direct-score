@@ -4,6 +4,9 @@ import { useParams, useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import "./GamePage.css";
 
+// Material UI
+import Button from "@mui/material/Button";
+
 // Competitions
 import GameEvents from "./GameEvents/GameEvents";
 import GameInfos from "./GameInfos/GameInfos";
@@ -11,7 +14,6 @@ import H2HComparaison from "./H2HComparaison/H2HComparaison";
 import GameStats from "./GameStats/GameStats";
 import Loading from "../Loading/Loading";
 import GameNavButton from "./GameNavButton/GameNavButton";
-import Button from "../Button/Button";
 
 function GamePage({
   setShowHistory,
@@ -33,9 +35,7 @@ function GamePage({
       try {
         // `https://directscore.onrender.com/game/${id}`
         // `http://localhost:4000/game/${id}`
-        const response = await axios.get(
-          `https://directscore.onrender.com/game/${id}`
-        );
+        const response = await axios.get(`http://localhost:4000/game/${id}`);
 
         setGameEvents(response.data.events);
         setGameInfos(response.data.infos);
@@ -58,9 +58,10 @@ function GamePage({
           <GameInfos gameEvents={gameEvents} gameInfos={gameInfos} />
           <Link to={`/competition/${compet_ID}`}>
             <Button
-              func={() => {
+              onClick={() => {
                 setShowHistory(false);
               }}
+              variant="outlined"
             >
               Retour
             </Button>

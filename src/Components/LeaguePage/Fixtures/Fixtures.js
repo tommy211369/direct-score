@@ -21,7 +21,7 @@ function Fixtures({ compet_ID }) {
         const response = await axios.get(
           // `https://directscore.onrender.com/fixtures?competition_id=${compet_ID}&page=${page}`
           // `http://localhost:4000/fixtures?competition_id=${compet_ID}&page=${page}`
-          `https://directscore.onrender.com/fixtures?competition_id=${compet_ID}&page=${page}`
+          `http://localhost:4000/fixtures?competition_id=${compet_ID}&page=${page}`
         );
 
         setFixtures(response.data.fixtures);

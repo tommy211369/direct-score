@@ -8,6 +8,10 @@
   margin-left: 20px;
 }
 
+.History .back-button {
+  margin-bottom: 30px;
+}
+
 .History a {
   text-decoration: none;
   color: initial;

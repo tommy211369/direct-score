@@ -1,0 +1,8 @@
+.NextPreviousHistoryButton {
+  display: flex;
+  justify-content: center;
+}
+
+.NextPreviousHistoryButton button {
+  width: 20%;
+}
