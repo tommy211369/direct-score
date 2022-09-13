@@ -6,76 +6,85 @@ import { Link } from "react-router-dom";
 // Material UI
 import Button from "@mui/material/Button";
 
+// Components
+import HomeButton from "../HomeButton/HomeButton";
+
 function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
   return (
     <nav className="Navigation">
-      <Link
-        to={`/competition/5`}
-        onClick={() => {
-          setShowHistory(false);
-          setShowComparaison(false);
-          setShowGameStats(false);
-        }}
-      >
-        <Button variant="contained" color="primary">
-          {" "}
-          Ligue 1
-        </Button>
-      </Link>
+      <HomeButton
+        setShowHistory={setShowHistory}
+        setShowComparaison={setShowComparaison}
+        setShowGameStats={setShowGameStats}
+      />
+      <div>
+        <Link
+          to={`/competition/5`}
+          onClick={() => {
+            setShowHistory(false);
+            setShowComparaison(false);
+            setShowGameStats(false);
+          }}
+        >
+          <Button variant="contained" color="primary">
+            {" "}
+            Ligue 1
+          </Button>
+        </Link>
 
-      <Link
-        to={`/competition/2`}
-        onClick={() => {
-          setShowHistory(false);
-          setShowComparaison(false);
-          setShowGameStats(false);
-        }}
-      >
-        <Button variant="contained" color="primary">
-          {" "}
-          Premier league
-        </Button>
-      </Link>
-      <Link
-        to={`/competition/3`}
-        onClick={() => {
-          setShowHistory(false);
-          setShowComparaison(false);
-          setShowGameStats(false);
-        }}
-      >
-        <Button variant="contained" color="primary">
-          {" "}
-          Liga
-        </Button>
-      </Link>
-      <Link
-        to={`/competition/1`}
-        onClick={() => {
-          setShowHistory(false);
-          setShowComparaison(false);
-          setShowGameStats(false);
-        }}
-      >
-        <Button variant="contained" color="primary">
-          {" "}
-          Bundesliga
-        </Button>
-      </Link>
-      <Link
-        to={`/competition/4`}
-        onClick={() => {
-          setShowHistory(false);
-          setShowComparaison(false);
-          setShowGameStats(false);
-        }}
-      >
-        <Button variant="contained" color="primary">
-          {" "}
-          Serie A
-        </Button>
-      </Link>
-      {/* <Link
+        <Link
+          to={`/competition/2`}
+          onClick={() => {
+            setShowHistory(false);
+            setShowComparaison(false);
+            setShowGameStats(false);
+          }}
+        >
+          <Button variant="contained" color="primary">
+            {" "}
+            Premier league
+          </Button>
+        </Link>
+        <Link
+          to={`/competition/3`}
+          onClick={() => {
+            setShowHistory(false);
+            setShowComparaison(false);
+            setShowGameStats(false);
+          }}
+        >
+          <Button variant="contained" color="primary">
+            {" "}
+            Liga
+          </Button>
+        </Link>
+        <Link
+          to={`/competition/1`}
+          onClick={() => {
+            setShowHistory(false);
+            setShowComparaison(false);
+            setShowGameStats(false);
+          }}
+        >
+          <Button variant="contained" color="primary">
+            {" "}
+            Bundesliga
+          </Button>
+        </Link>
+        <Link
+          to={`/competition/4`}
+          onClick={() => {
+            setShowHistory(false);
+            setShowComparaison(false);
+            setShowGameStats(false);
+          }}
+        >
+          <Button variant="contained" color="primary">
+            {" "}
+            Serie A
+          </Button>
+        </Link>
+        {/* <Link
         to={`/competition/244`}
         onClick={() => {
           setShowHistory(false);
@@ -105,6 +114,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
       >
         UEFA Conference League
       </Link> */}
+      </div>
     </nav>
   );
 }
