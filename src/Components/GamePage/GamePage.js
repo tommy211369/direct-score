@@ -35,7 +35,9 @@ function GamePage({
       try {
         // `https://directscore.onrender.com/game/${id}`
         // `http://localhost:4000/game/${id}`
-        const response = await axios.get(`http://localhost:4000/game/${id}`);
+        const response = await axios.get(
+          `https://directscore.onrender.com/game/${id}`
+        );
 
         setGameEvents(response.data.events);
         setGameInfos(response.data.infos);

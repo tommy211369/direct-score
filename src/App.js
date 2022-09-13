@@ -11,6 +11,7 @@ import LeaguePage from "./Components/LeaguePage/LeaguePage";
 import GamePage from "./Components/GamePage/GamePage";
 import History from "./Components/LeaguePage/History/History";
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [showHistory, setShowHistory] = useState(false);
@@ -56,6 +57,7 @@ function App() {
             </Routes>
           </BrowserRouter>
         </main>
+        <Footer />
       </>
     </div>
   );
