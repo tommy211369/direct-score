@@ -9,7 +9,7 @@
 
 .App main {
   width: 70%;
-  min-height: 100%;
+  min-height: 100vh;
   background-color: #fff;
   margin: 0 auto;
   padding-bottom: 50px;
