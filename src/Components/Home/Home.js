@@ -11,11 +11,13 @@ function Home() {
   const [news, setNews] = useState();
   const [loading, setLoading] = useState(true);
 
+  // e8d61824638241f095ef51454009716e
+
   useEffect(() => {
     const getNews = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=fr&category=sports&domains=rmcsport.bfmtv.com,eurosport.fr,footmercato.net,butfootballclub.fr,onzemondial.com,maxifoot.fr,foot01.com,jeunesfooteux.com,lequipe.fr,canal-supporters.com&q=foot&pageSize=100&apiKey=e8d61824638241f095ef51454009716e`
+          `https://newsapi.org/v2/top-headlines?country=fr&category=sports&domains=rmcsport.bfmtv.com,eurosport.fr,footmercato.net,butfootballclub.fr,onzemondial.com,maxifoot.fr,foot01.com,jeunesfooteux.com,lequipe.fr,canal-supporters.com&q=foot&pageSize=100&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
         );
 
         console.log("NEWS :", response.data.articles);
