@@ -11,8 +11,6 @@ function Home() {
   const [news, setNews] = useState();
   const [loading, setLoading] = useState(true);
 
-  // e8d61824638241f095ef51454009716e
-
   useEffect(() => {
     const getNews = async () => {
       try {
