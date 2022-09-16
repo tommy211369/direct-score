@@ -20,7 +20,6 @@ function Home() {
           `https://newsapi.org/v2/top-headlines?country=fr&category=sports&domains=rmcsport.bfmtv.com,eurosport.fr,footmercato.net,butfootballclub.fr,onzemondial.com,maxifoot.fr,foot01.com,jeunesfooteux.com,lequipe.fr,canal-supporters.com&q=foot&pageSize=100&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
         );
 
-        console.log("NEWS :", response.data.articles);
         setNews(response.data.articles);
         setLoading(false);
       } catch (error) {

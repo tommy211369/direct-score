@@ -28,9 +28,9 @@ function History({
     console.log("getNewHistory previous page :", page - 1);
     try {
       const response = await axios.get(
-        // `https://directscore.onrender.com/history?competition_id=${compet_ID}&page=${page - 1}`
-        // `http://localhost:4000/history?competition_id=${compet_ID}&page=${page - 1}`
-        `https://directscore.onrender.com/history?competition_id=${compet_ID}&page=${
+        // `https://directscore.onrender.com/history/new?competition_id=${compet_ID}&page=${page - 1}`
+        // `http://localhost:4000/history/new?competition_id=${compet_ID}&page=${page - 1}`
+        `https://directscore.onrender.com/history/new?competition_id=${compet_ID}&page=${
           page - 1
         }`
       );
@@ -50,9 +50,9 @@ function History({
     console.log("getNewHistory previous page :", page + 1);
     try {
       const response = await axios.get(
-        // `https://directscore.onrender.com/history?competition_id=${compet_ID}&page=${page + 1}`
-        // `http://localhost:4000/history?competition_id=${compet_ID}&page=${page + 1}`
-        `https://directscore.onrender.com/history?competition_id=${compet_ID}&page=${
+        // `https://directscore.onrender.com/history/new?competition_id=${compet_ID}&page=${page + 1}`
+        // `http://localhost:4000/history/new?competition_id=${compet_ID}&page=${page + 1}`
+        `https://directscore.onrender.com/history/new?competition_id=${compet_ID}&page=${
           page + 1
         }`
       );

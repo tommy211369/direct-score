@@ -35,9 +35,6 @@ function LeaguePage({ showHistory, setShowHistory }) {
         setHistory(response.data.history);
         setTotalPage(response.data.page);
         setPage(response.data.page);
-        console.log("History :", response.data.history);
-        console.log("Message :", response.data.message);
-        console.log("Page :", response.data.page);
         setLoading(false);
       } catch (error) {
         console.log(error.response);

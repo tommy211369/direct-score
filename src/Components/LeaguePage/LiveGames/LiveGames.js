@@ -22,7 +22,6 @@ function LiveGames({ compet_ID }) {
           `https://directscore.onrender.com/livegames?competition_id=${compet_ID}`
         );
 
-        console.log(response.data);
         setLiveGames(response.data);
         setLoading(false);
       } catch (error) {
