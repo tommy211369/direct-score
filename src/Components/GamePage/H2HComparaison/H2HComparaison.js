@@ -22,7 +22,7 @@ function H2HComparaison({ homeID, awayID, compet_ID }) {
           // `http://localhost:4000/h2h?team1_id=${homeID}&team2_id=${awayID}`
           `https://directscore.onrender.com/h2h?team1_id=${homeID}&team2_id=${awayID}`
         );
-        console.log(response.data);
+
         setHomeTeam(response.data.homeTeam);
         setAwayTeam(response.data.awayTeam);
         setHomeTeamLast6(response.data.homeTeamLast6);

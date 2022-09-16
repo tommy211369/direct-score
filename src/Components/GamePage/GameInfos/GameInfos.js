@@ -1,12 +1,7 @@
 // Librairies
 import React from "react";
 import "./GameInfos.css";
-import {
-  dateLiveFormatter,
-  timeFormatter,
-  capitalizeName,
-  leagueName,
-} from "../../../assets/functions";
+import { timeFormatter, capitalizeName } from "../../../assets/functions";
 import { mini_ball } from "../../../assets/img";
 
 function GameInfos({ gameEvents, gameInfos }) {

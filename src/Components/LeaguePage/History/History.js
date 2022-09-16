@@ -25,7 +25,7 @@ function History({
 }) {
   const getPreviousHistory = async () => {
     await setPage(page - 1);
-    console.log("getNewHistory previous page :", page - 1);
+
     try {
       const response = await axios.get(
         // `https://directscore.onrender.com/history/new?competition_id=${compet_ID}&page=${page - 1}`
@@ -35,9 +35,6 @@ function History({
         }`
       );
 
-      console.log("PREVIOUS HISTORY MESSAGE:", response.data.message);
-      console.log("PREVIOUS HISTORY :", response.data.history);
-      console.log("PREVIOUS PAGE :", response.data.page);
       setHistory(response.data.history);
       setLoading(false);
     } catch (error) {
@@ -47,7 +44,7 @@ function History({
 
   const getNextHistory = async () => {
     await setPage(page + 1);
-    console.log("getNewHistory previous page :", page + 1);
+
     try {
       const response = await axios.get(
         // `https://directscore.onrender.com/history/new?competition_id=${compet_ID}&page=${page + 1}`
@@ -57,9 +54,6 @@ function History({
         }`
       );
 
-      console.log("NEXT HISTORY MESSAGE:", response.data.message);
-      console.log("NEXT HISTORY :", response.data.history);
-      console.log("NEXT PAGE :", response.data.page);
       setHistory(response.data.history);
       setLoading(false);
     } catch (error) {

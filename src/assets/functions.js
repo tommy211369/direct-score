@@ -97,7 +97,6 @@ export const statsDataFormat = (object) => {
     newStatsObject.push([newStat[0], statArray.join(" "), newStat[1]]);
   }
 
-  console.log("newStatsObject :", newStatsObject);
   return newStatsObject;
 };
 
