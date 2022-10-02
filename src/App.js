@@ -11,6 +11,7 @@ import LeaguePage from "./Components/LeaguePage/LeaguePage";
 import GamePage from "./Components/GamePage/GamePage";
 import History from "./Components/LeaguePage/History/History";
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
+import ArrowToTop from "./Components/ArrowToTop/ArrowToTop";
 import Footer from "./Components/Footer/Footer";
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
               <Route path="/competition/history/:id" element={<History />} />
               <Route path="*" element={<ErrorPage />} />
             </Routes>
+            <ArrowToTop />
           </BrowserRouter>
         </main>
         <Footer />

@@ -55,19 +55,19 @@ function GameInfos({ gameEvents, gameInfos }) {
       <div className="teams">
         <div>
           <p>{gameInfos.home_name}</p>
-          <div className="scorerList">
-            {scorerListHome.length > 0
-              ? scorerListHome.map((scorer) => {
-                  return (
-                    <div key={scorer.id} className="scorer">
-                      <img src={mini_ball} alt="mini-ball" />
-                      <span>{scorer.name}</span>
-                      <span>{scorer.time}'</span>
-                    </div>
-                  );
-                })
-              : null}
-          </div>
+          {scorerListHome.length > 0 ? (
+            <div className="scorerList">
+              {scorerListHome.map((scorer) => {
+                return (
+                  <div key={scorer.id} className="scorer">
+                    <img src={mini_ball} alt="mini-ball" />
+                    <span>{scorer.name}</span>
+                    <span>{scorer.time}'</span>
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
         </div>
         <div className="score">
           <span>{gameInfos.score}</span>
@@ -78,19 +78,19 @@ function GameInfos({ gameEvents, gameInfos }) {
 
         <div>
           <p>{gameInfos.away_name}</p>
-          <div className="scorerList">
-            {scorerListAway.length > 0
-              ? scorerListAway.map((scorer) => {
-                  return (
-                    <div key={scorer.id} className="scorer">
-                      <img src={mini_ball} alt="mini-ball" />
-                      <span>{scorer.name}</span>
-                      <span>{scorer.time}'</span>
-                    </div>
-                  );
-                })
-              : null}
-          </div>
+          {scorerListAway.length > 0 ? (
+            <div className="scorerList">
+              {scorerListAway.map((scorer) => {
+                return (
+                  <div key={scorer.id} className="scorer">
+                    <img src={mini_ball} alt="mini-ball" />
+                    <span>{scorer.name}</span>
+                    <span>{scorer.time}'</span>
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
