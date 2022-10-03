@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Home.css";
 import { dateLiveFormatter } from "../../assets/functions";
+import stadium from "../../assets/img/stadium.jpeg";
 
 // Components
 import Loading from "../Loading/Loading";
@@ -38,7 +39,12 @@ function Home() {
           {news.map((article, index) => {
             return (
               <a key={index} href={article.url} target="blank">
-                <img src={article.urlToImage} alt="article pic" />
+                {article.urlToImage ? (
+                  <img src={article.urlToImage} alt="article pic" />
+                ) : (
+                  <img src={stadium} alt="stadium pic" />
+                )}
+
                 <div>
                   <p className="source">{article.source.name}</p>
                   <p className="title">{article.title}</p>
