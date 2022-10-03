@@ -33,7 +33,6 @@ function Home() {
       {loading ? (
         <div className="home-message">
           <Lottie animationData={footballAnimation} />
-          {/*<Loading />*/}
           <p>
             Les informations sur cette page d'accueil ne sont disponibles pour
             le moment qu'en mode Développement.
