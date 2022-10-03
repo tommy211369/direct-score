@@ -7,8 +7,5 @@
 
 .LeaguePage .history-button {
   margin-bottom: 50px;
-}
-
-.LeaguePage > div:nth-child(3) {
   text-align: center;
 }

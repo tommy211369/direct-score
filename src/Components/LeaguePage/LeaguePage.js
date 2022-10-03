@@ -59,13 +59,12 @@ function LeaguePage({ showHistory, setShowHistory }) {
       {loading ? (
         <Loading />
       ) : !showHistory && history ? (
-        <div>
+        <div className="history-button">
           <Button
             onClick={() => {
               setShowHistory(true);
             }}
             variant="outlined"
-            className="history-button"
           >
             Voir les résultats des matchs de {leagueName(id)}
           </Button>
