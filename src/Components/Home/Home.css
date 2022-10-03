@@ -2,6 +2,17 @@
   padding-top: 50px;
 }
 
+.Home .home-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Home .home-message p {
+  font-style: oblique;
+  margin-bottom: 10px;
+}
+
 .Home .articles h1 {
   color: #4b6983;
   font-weight: bold;

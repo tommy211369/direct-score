@@ -4,6 +4,8 @@ import axios from "axios";
 import "./Home.css";
 import { dateLiveFormatter } from "../../assets/functions";
 import stadium from "../../assets/img/stadium.jpeg";
+import Lottie from "lottie-react";
+import footballAnimation from "../../assets/img/directscore-loading-lottie.json";
 
 // Components
 import Loading from "../Loading/Loading";
@@ -20,7 +22,7 @@ function Home() {
         );
 
         setNews(response.data.articles);
-        setLoading(false);
+        // setLoading(false);
       } catch (error) {
         console.log(error.response);
       }
@@ -32,7 +34,15 @@ function Home() {
   return (
     <div className="Home">
       {loading ? (
-        <Loading />
+        <div className="home-message">
+          <Lottie animationData={footballAnimation} />
+          {/*<Loading />*/}
+          <p>
+            Les informations sur cette page d'accueil ne sont disponibles pour
+            le moment qu'en mode Développement.
+          </p>
+          <p>Elle seront disponibles ici ultérieurement.</p>
+        </div>
       ) : (
         <div className="articles">
           <h1>LES DERNIÈRES INFOS FOOT</h1>
