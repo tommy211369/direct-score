@@ -7,9 +7,6 @@ import stadium from "../../assets/img/stadium.jpeg";
 import Lottie from "lottie-react";
 import footballAnimation from "../../assets/img/directscore-loading-lottie.json";
 
-// Components
-import Loading from "../Loading/Loading";
-
 function Home() {
   const [news, setNews] = useState();
   const [loading, setLoading] = useState(true);
@@ -22,7 +19,7 @@ function Home() {
         );
 
         setNews(response.data.articles);
-        // setLoading(false);
+        setLoading(false);
       } catch (error) {
         console.log(error.response);
       }
