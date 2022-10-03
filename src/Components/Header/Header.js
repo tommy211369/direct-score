@@ -1,11 +1,21 @@
 // Librairies
+import { Link } from "react-router-dom";
 import "./Header.css";
 import directScorelogo from "../../assets/logo/direct_score_cover_photo_1.jpg";
 
-function Header() {
+function Header({ setShowHistory, setShowComparaison, setShowGameStats }) {
   return (
     <header>
-      <img src={directScorelogo} alt="Logo Direct Score" />
+      <Link
+        to={"/"}
+        onClick={() => {
+          setShowHistory(false);
+          setShowComparaison(false);
+          setShowGameStats(false);
+        }}
+      >
+        <img src={directScorelogo} alt="Logo Direct Score" />
+      </Link>
     </header>
   );
 }

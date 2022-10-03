@@ -22,9 +22,13 @@ function App() {
   return (
     <div className="App">
       <>
-        <Header />
-        <main>
-          <BrowserRouter>
+        <BrowserRouter>
+          <Header
+            setShowHistory={setShowHistory}
+            setShowComparaison={setShowComparaison}
+            setShowGameStats={setShowGameStats}
+          />
+          <main>
             <Navigation
               setShowHistory={setShowHistory}
               setShowComparaison={setShowComparaison}
@@ -57,9 +61,9 @@ function App() {
               <Route path="*" element={<ErrorPage />} />
             </Routes>
             <ArrowToTop />
-          </BrowserRouter>
-        </main>
-        <Footer />
+          </main>
+          <Footer />
+        </BrowserRouter>
       </>
     </div>
   );
