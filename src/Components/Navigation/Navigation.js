@@ -9,6 +9,10 @@ import Button from "@mui/material/Button";
 // Components
 import HomeButton from "../HomeButton/HomeButton";
 
+// C1 id: 244 seasonId : 14
+// C3 id: 245 seasonId : 14
+// C4 id: 446 seasonId : 14
+
 function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
   return (
     <nav className="Navigation">
@@ -84,36 +88,42 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
             Serie A
           </Button>
         </Link>
+        <Link
+          to={`/competition/244`}
+          onClick={() => {
+            setShowHistory(false);
+            setShowComparaison(false);
+            setShowGameStats(false);
+          }}
+        >
+          <Button variant="contained" color="primary">
+            Ligue des Champions
+          </Button>
+        </Link>
         {/* <Link
-        to={`/competition/244`}
-        onClick={() => {
-          setShowHistory(false);
-          setShowComparaison(false);
-          setShowGameStats(false);
-        }}
-      >
-        UEFA Champion's League
-      </Link>
-      <Link
-        to={`/competition/245`}
-        onClick={() => {
-          setShowHistory(false);
-          setShowComparaison(false);
-          setShowGameStats(false);
-        }}
-      >
-        UEFA Europa league
-      </Link>
-      <Link
-        to={`/competition/446`}
-        onClick={() => {
-          setShowHistory(false);
-          setShowComparaison(false);
-          setShowGameStats(false);
-        }}
-      >
-        UEFA Conference League
-      </Link> */}
+          to={`/competition/245`}
+          onClick={() => {
+            setShowHistory(false);
+            setShowComparaison(false);
+            setShowGameStats(false);
+          }}
+        >
+          <Button variant="contained" color="primary">
+            Ligue Europa
+          </Button>
+        </Link>
+        <Link
+          to={`/competition/446`}
+          onClick={() => {
+            setShowHistory(false);
+            setShowComparaison(false);
+            setShowGameStats(false);
+          }}
+        >
+          <Button variant="contained" color="primary">
+            Conference League
+          </Button>
+        </Link> */}
       </div>
     </nav>
   );

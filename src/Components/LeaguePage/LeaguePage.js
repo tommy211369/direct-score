@@ -13,6 +13,7 @@ import History from "./History/History";
 import Fixtures from "./Fixtures/Fixtures";
 import LiveGames from "./LiveGames/LiveGames";
 import LeagueLogo from "../LeagueLogo/LeagueLogo";
+import Groups from "../Groups/Groups";
 import Loading from "../Loading/Loading";
 
 function LeaguePage({ showHistory, setShowHistory }) {
@@ -52,6 +53,9 @@ function LeaguePage({ showHistory, setShowHistory }) {
           <LeagueLogo id={id} />
         </div>
       </div>
+
+      {id === "244" ? <Groups /> : null}
+
       {loading ? (
         <Loading />
       ) : !showHistory && history ? (
