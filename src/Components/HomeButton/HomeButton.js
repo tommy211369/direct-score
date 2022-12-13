@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 // Material UI
 import Button from "@mui/material/Button";
 
-function HomeButton({ setShowHistory, setShowComparaison, setShowGameStats }) {
+function HomeButton({
+  setShowHistory,
+  setShowComparaison,
+  setShowGameStats,
+  setShowStandings,
+}) {
   return (
     <Link to="/">
       <Button
@@ -13,6 +18,7 @@ function HomeButton({ setShowHistory, setShowComparaison, setShowGameStats }) {
           setShowHistory(false);
           setShowComparaison(false);
           setShowGameStats(false);
+          setShowStandings(false);
         }}
         className="home-button"
       >

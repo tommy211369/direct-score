@@ -68,20 +68,23 @@ function History({
           <Loading />
         ) : (
           <>
-            <h1 id="ReturnToTop">
-              Résultats des matchs de {leagueName(compet_ID)}
-            </h1>
-            <Link to={`/competition/${compet_ID}`}>
-              <Button
-                onClick={() => {
-                  setShowHistory(false);
-                }}
-                variant="outlined"
-                className="back-button"
-              >
-                Retour
-              </Button>
-            </Link>
+            <div className="head">
+              <h1 id="ReturnToTop">
+                Résultats des matchs de {leagueName(compet_ID)}
+              </h1>
+
+              <Link to={`/competition/${compet_ID}`}>
+                <Button
+                  onClick={() => {
+                    setShowHistory(false);
+                  }}
+                  variant="outlined"
+                  className="back-button"
+                >
+                  Retour
+                </Button>
+              </Link>
+            </div>
 
             <NextPreviousGamesButton
               setLoading={setLoading}

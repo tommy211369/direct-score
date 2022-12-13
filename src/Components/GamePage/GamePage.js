@@ -17,6 +17,7 @@ import GameNavButton from "./GameNavButton/GameNavButton";
 
 function GamePage({
   setShowHistory,
+  setShowStandings,
   showComparaison,
   setShowComparaison,
   showGameStats,
@@ -62,6 +63,7 @@ function GamePage({
             <Button
               onClick={() => {
                 setShowHistory(false);
+                setShowStandings(false);
               }}
               variant="outlined"
             >

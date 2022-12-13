@@ -13,13 +13,19 @@ import HomeButton from "../HomeButton/HomeButton";
 // C3 id: 245 seasonId : 14
 // C4 id: 446 seasonId : 14
 
-function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
+function Navigation({
+  setShowHistory,
+  setShowComparaison,
+  setShowGameStats,
+  setShowStandings,
+}) {
   return (
     <nav className="Navigation">
       <HomeButton
         setShowHistory={setShowHistory}
         setShowComparaison={setShowComparaison}
         setShowGameStats={setShowGameStats}
+        setShowStandings={setShowStandings}
       />
       <div>
         <Link
@@ -28,6 +34,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
             setShowHistory(false);
             setShowComparaison(false);
             setShowGameStats(false);
+            setShowStandings(false);
           }}
         >
           <Button variant="contained" color="primary">
@@ -42,6 +49,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
             setShowHistory(false);
             setShowComparaison(false);
             setShowGameStats(false);
+            setShowStandings(false);
           }}
         >
           <Button variant="contained" color="primary">
@@ -55,6 +63,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
             setShowHistory(false);
             setShowComparaison(false);
             setShowGameStats(false);
+            setShowStandings(false);
           }}
         >
           <Button variant="contained" color="primary">
@@ -68,6 +77,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
             setShowHistory(false);
             setShowComparaison(false);
             setShowGameStats(false);
+            setShowStandings(false);
           }}
         >
           <Button variant="contained" color="primary">
@@ -81,6 +91,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
             setShowHistory(false);
             setShowComparaison(false);
             setShowGameStats(false);
+            setShowStandings(false);
           }}
         >
           <Button variant="contained" color="primary">
@@ -94,6 +105,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
             setShowHistory(false);
             setShowComparaison(false);
             setShowGameStats(false);
+            setShowStandings(false);
           }}
         >
           <Button variant="contained" color="primary">
@@ -106,6 +118,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
             setShowHistory(false);
             setShowComparaison(false);
             setShowGameStats(false);
+            setShowStandings(false)
           }}
         >
           <Button variant="contained" color="primary">
@@ -118,6 +131,7 @@ function Navigation({ setShowHistory, setShowComparaison, setShowGameStats }) {
             setShowHistory(false);
             setShowComparaison(false);
             setShowGameStats(false);
+            setShowStandings(false)
           }}
         >
           <Button variant="contained" color="primary">

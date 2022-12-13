@@ -12,11 +12,17 @@ import Button from "@mui/material/Button";
 import History from "./History/History";
 import Fixtures from "./Fixtures/Fixtures";
 import LiveGames from "./LiveGames/LiveGames";
+import Standings from "./Standings/Standings";
 import LeagueLogo from "../LeagueLogo/LeagueLogo";
 import Groups from "../Groups/Groups";
 import Loading from "../Loading/Loading";
 
-function LeaguePage({ showHistory, setShowHistory }) {
+function LeaguePage({
+  showHistory,
+  setShowHistory,
+  showStandings,
+  setShowStandings,
+}) {
   const { id } = useParams();
 
   const [history, setHistory] = useState([]);
@@ -59,19 +65,30 @@ function LeaguePage({ showHistory, setShowHistory }) {
       {loading ? (
         <Loading />
       ) : !showHistory && history ? (
-        <div className="history-button">
+        <div className="leaguepage-nav">
           <Button
             onClick={() => {
-              setShowHistory(true);
+              setShowHistory(false);
+              setShowStandings(true);
             }}
             variant="outlined"
           >
-            Voir les résultats des matchs de {leagueName(id)}
+            Classement
+          </Button>
+
+          <Button
+            onClick={() => {
+              setShowHistory(true);
+              setShowStandings(false);
+            }}
+            variant="outlined"
+          >
+            Résultats
           </Button>
         </div>
       ) : null}
 
-      {showHistory ? (
+      {showHistory && !showStandings ? (
         <History
           setShowHistory={setShowHistory}
           history={history}
@@ -83,6 +100,8 @@ function LeaguePage({ showHistory, setShowHistory }) {
           setLoading={setLoading}
           totalPage={totalPage}
         />
+      ) : showStandings && !showHistory ? (
+        <Standings setShowStandings={setShowStandings} compet_ID={id} />
       ) : (
         <>
           <LiveGames compet_ID={id} />

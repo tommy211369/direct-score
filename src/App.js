@@ -10,12 +10,14 @@ import Home from "./Components/Home/Home";
 import LeaguePage from "./Components/LeaguePage/LeaguePage";
 import GamePage from "./Components/GamePage/GamePage";
 import History from "./Components/LeaguePage/History/History";
+import Standings from "./Components/LeaguePage/Standings/Standings";
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
 import ArrowToTop from "./Components/ArrowToTop/ArrowToTop";
 import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [showHistory, setShowHistory] = useState(false);
+  const [showStandings, setShowStandings] = useState(false);
   const [showComparaison, setShowComparaison] = useState(false);
   const [showGameStats, setShowGameStats] = useState(false);
 
@@ -27,12 +29,14 @@ function App() {
             setShowHistory={setShowHistory}
             setShowComparaison={setShowComparaison}
             setShowGameStats={setShowGameStats}
+            setShowStandings={setShowStandings}
           />
           <main>
             <Navigation
               setShowHistory={setShowHistory}
               setShowComparaison={setShowComparaison}
               setShowGameStats={setShowGameStats}
+              setShowStandings={setShowStandings}
             />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -42,6 +46,8 @@ function App() {
                   <LeaguePage
                     showHistory={showHistory}
                     setShowHistory={setShowHistory}
+                    showStandings={showStandings}
+                    setShowStandings={setShowStandings}
                   />
                 }
               />
@@ -50,6 +56,7 @@ function App() {
                 element={
                   <GamePage
                     setShowHistory={setShowHistory}
+                    setShowStandings={setShowStandings}
                     showComparaison={showComparaison}
                     setShowComparaison={setShowComparaison}
                     showGameStats={showGameStats}
@@ -58,6 +65,10 @@ function App() {
                 }
               />
               <Route path="/competition/history/:id" element={<History />} />
+              <Route
+                path="/competition/standings/:id"
+                element={<Standings />}
+              />
               <Route path="*" element={<ErrorPage />} />
             </Routes>
             <ArrowToTop />
