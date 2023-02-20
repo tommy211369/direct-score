@@ -99,7 +99,7 @@ function Navigation({
             Serie A
           </Button>
         </Link>
-        <Link
+        {/*<Link
           to={`/competition/244`}
           onClick={() => {
             setShowHistory(false);
@@ -111,8 +111,8 @@ function Navigation({
           <Button variant="contained" color="primary">
             Ligue des Champions
           </Button>
-        </Link>
-        {/* <Link
+        </Link> 
+        <Link
           to={`/competition/245`}
           onClick={() => {
             setShowHistory(false);
