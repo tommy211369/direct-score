@@ -13,9 +13,8 @@ Follow the livescores and fixtures of Premier League, ligue 1, Serie A, La Liga 
 Made with React, using React Router for browsing, Axios for requests, icons from FontAwesome and Material-UI.
 
 Database : MongoDB.  
-Deploy on Netlify : https://gamepad-by-tommy.netlify.app/
-
-Back-end : https://github.com/tommy211369/livescore-back (deployed on Render)
+Deploy with Netlify
+Back-end deployed on Render
 
 ## Screenshots
 
