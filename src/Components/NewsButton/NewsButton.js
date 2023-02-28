@@ -1,18 +1,18 @@
 // Librairies
-import "./HomeButton.css";
+import "./NewsButton.css";
 import { Link } from "react-router-dom";
 
 // Material UI
 import Button from "@mui/material/Button";
 
-function HomeButton({
+function NewsButton({
   setShowHistory,
   setShowComparaison,
   setShowGameStats,
   setShowStandings,
 }) {
   return (
-    <Link to="/">
+    <Link to="/news">
       <Button
         onClick={() => {
           setShowHistory(false);
@@ -22,10 +22,10 @@ function HomeButton({
         }}
         className="home-button"
       >
-        ACCUEIL
+        NEWS
       </Button>
     </Link>
   );
 }
 
-export default HomeButton;
+export default NewsButton;

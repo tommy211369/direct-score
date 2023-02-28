@@ -45,7 +45,7 @@ function H2HComparaison({ homeID, awayID, compet_ID }) {
         <>
           <div className="overallForm">
             <div>
-              {homeTeam.overall_form.map((form, index) => {
+              {homeTeam.overall_form.slice(0, 5).map((form, index) => {
                 if (form === "L") {
                   return (
                     <span key={index} className="lost">
@@ -69,7 +69,7 @@ function H2HComparaison({ homeID, awayID, compet_ID }) {
             </div>
             <h1>Série en Cours</h1>
             <div>
-              {awayTeam.overall_form.map((form, index) => {
+              {awayTeam.overall_form.slice(0, 5).map((form, index) => {
                 if (form === "L") {
                   return (
                     <span key={index} className="lost">
@@ -95,7 +95,7 @@ function H2HComparaison({ homeID, awayID, compet_ID }) {
 
           <div className="last_6_games">
             <div>
-              {homeTeamLast6.map((game) => {
+              {homeTeamLast6.slice(0, 5).map((game) => {
                 return (
                   <li key={game.id}>
                     <span>{game.home_name}</span>
@@ -114,7 +114,7 @@ function H2HComparaison({ homeID, awayID, compet_ID }) {
             </div>
             <h1>Derniers résultats des équipes</h1>
             <div>
-              {awayTeamLast6.map((game) => {
+              {awayTeamLast6.slice(0, 5).map((game) => {
                 return (
                   <li key={game.id}>
                     <span>{game.home_name}</span>

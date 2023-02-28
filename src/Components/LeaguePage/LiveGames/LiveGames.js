@@ -1,5 +1,4 @@
 // Librairies
-import React from "react";
 import "./LiveGames.css";
 import axios from "axios";
 import { useState, useEffect } from "react";

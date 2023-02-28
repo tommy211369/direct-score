@@ -1,0 +1,69 @@
+.News {
+  padding-top: 50px;
+}
+
+.News .news-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.News .news-message p {
+  font-style: oblique;
+  margin-bottom: 10px;
+}
+
+.News .articles h1 {
+  color: #4b6983;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.News .articles a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: initial;
+  transition: all 0.2s ease-in;
+  width: 90%;
+  border-radius: 20px;
+  margin: 20px auto;
+  box-shadow: 1px 1px 8px grey;
+  padding-right: 20px;
+}
+
+.News .articles a img {
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px 0 0 20px;
+}
+
+.News .articles a div {
+  margin-left: 20px;
+}
+
+.News .articles a div .source {
+  color: #4b6983;
+  margin-bottom: 20px;
+}
+
+.News .articles a div .title {
+  font-weight: bold;
+}
+
+.News .articles a div .author {
+  font-style: oblique;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.News .articles a div .date {
+  font-size: 0.9em;
+}
+
+.News .articles a:hover {
+  background-color: aliceblue;
+  transform: scaleX(1.05);
+}

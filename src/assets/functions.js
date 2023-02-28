@@ -6,7 +6,7 @@ export const timeFormatter = (time) => {
     hour += time[i];
   }
 
-  let frHour = parseInt(hour) + 2;
+  let frHour = parseInt(hour) + 1;
 
   for (let i = 3; i < 5; i++) {
     minutes += time[i];

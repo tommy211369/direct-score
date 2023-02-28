@@ -1,69 +1,27 @@
 .Home {
-  padding-top: 50px;
+  padding: 50px;
 }
 
-.Home .home-message {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.Home .home-message p {
-  font-style: oblique;
-  margin-bottom: 10px;
-}
-
-.Home .articles h1 {
-  color: #4b6983;
-  font-weight: bold;
+.Home h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 30px;
 }
 
-.Home .articles a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: initial;
-  transition: all 0.2s ease-in;
-  width: 90%;
-  border-radius: 20px;
-  margin: 20px auto;
-  box-shadow: 1px 1px 8px grey;
-  padding-right: 20px;
-}
-
-.Home .articles a img {
-  width: 280px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 20px 0 0 20px;
-}
-
-.Home .articles a div {
-  margin-left: 20px;
-}
-
-.Home .articles a div .source {
-  color: #4b6983;
+.Home img {
+  height: 60px;
+  width: 80px;
+  object-fit: contain;
+  margin-top: 130px;
   margin-bottom: 20px;
 }
 
-.Home .articles a div .title {
-  font-weight: bold;
-}
+/* .Home h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f719e;
+} */
 
-.Home .articles a div .author {
+.no-game-message {
   font-style: oblique;
-  margin-top: 10px;
-  font-size: 0.9em;
-}
-
-.Home .articles a div .date {
-  font-size: 0.9em;
-}
-
-.Home .articles a:hover {
-  background-color: aliceblue;
-  transform: scaleX(1.05);
 }

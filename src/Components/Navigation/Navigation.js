@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 
 // Components
-import HomeButton from "../HomeButton/HomeButton";
+import NewsButton from "../NewsButton/NewsButton";
 
 // C1 id: 244 seasonId : 14
 // C3 id: 245 seasonId : 14
@@ -21,7 +21,7 @@ function Navigation({
 }) {
   return (
     <nav className="Navigation">
-      <HomeButton
+      <NewsButton
         setShowHistory={setShowHistory}
         setShowComparaison={setShowComparaison}
         setShowGameStats={setShowGameStats}
