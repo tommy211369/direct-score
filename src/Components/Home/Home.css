@@ -25,3 +25,58 @@
 .no-game-message {
   font-style: oblique;
 }
+
+.Home a {
+  text-decoration: none;
+  color: initial;
+}
+
+.Home .game {
+  background-color: rgb(236, 236, 236);
+  padding: 8px;
+  border-radius: 20px;
+  transition: background-color 0.4s ease;
+}
+
+.Home a:hover .game {
+  background-color: rgb(24, 135, 153, 0.4);
+}
+
+.Home .game .teams {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.LiveGaLiveGamesmesLigue1 a:hover .game .teams {
+  color: white;
+}
+
+.Home .game .teams span {
+  display: block;
+  width: 30%;
+}
+
+.Home .game .teams .score {
+  color: rgb(13, 123, 35);
+}
+
+.Home .game .time {
+  text-align: center;
+  padding-bottom: 5px;
+  font-size: 0.8em;
+}
+
+.Home .game .stadium {
+  margin: 5px 0;
+  text-align: center;
+  font-size: 0.8em;
+  color: rgb(101, 101, 101);
+}
+
+.Home .no-live-games-message {
+  text-align: center;
+}

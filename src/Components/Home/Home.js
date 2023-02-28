@@ -152,7 +152,7 @@ function Home() {
                 return (
                   <Link
                     to={`/game/${game.id}`}
-                    state={{ status: "LIVE", compet_ID: 5 }}
+                    state={{ status: "LIVE", compet_ID: 2 }}
                     key={game.id}
                   >
                     <div className="game">
@@ -215,7 +215,7 @@ function Home() {
                 return (
                   <Link
                     to={`/game/${game.id}`}
-                    state={{ status: "LIVE", compet_ID: 5 }}
+                    state={{ status: "LIVE", compet_ID: 3 }}
                     key={game.id}
                   >
                     <div className="game">
@@ -278,7 +278,7 @@ function Home() {
                 return (
                   <Link
                     to={`/game/${game.id}`}
-                    state={{ status: "LIVE", compet_ID: 5 }}
+                    state={{ status: "LIVE", compet_ID: 1 }}
                     key={game.id}
                   >
                     <div className="game">
@@ -341,7 +341,7 @@ function Home() {
                 return (
                   <Link
                     to={`/game/${game.id}`}
-                    state={{ status: "LIVE", compet_ID: 5 }}
+                    state={{ status: "LIVE", compet_ID: 4 }}
                     key={game.id}
                   >
                     <div className="game">
