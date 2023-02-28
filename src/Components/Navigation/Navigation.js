@@ -21,12 +21,12 @@ function Navigation({
 }) {
   return (
     <nav className="Navigation">
-      <NewsButton
+      {/* <NewsButton
         setShowHistory={setShowHistory}
         setShowComparaison={setShowComparaison}
         setShowGameStats={setShowGameStats}
         setShowStandings={setShowStandings}
-      />
+  /> */}
       <div>
         <Link
           to={`/competition/5`}

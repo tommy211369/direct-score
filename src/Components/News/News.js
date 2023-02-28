@@ -15,9 +15,10 @@ function News() {
     const getNews = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=fr&category=sports&domains=rmcsport.bfmtv.com,eurosport.fr,footmercato.net,butfootballclub.fr,onzemondial.com,maxifoot.fr,foot01.com,jeunesfooteux.com,lequipe.fr,canal-supporters.com&q=foot&pageSize=100&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+          `http://api.mediastack.com/v1/news?access_key=2d4a2c9411b719918b2a6452b68edb61&categories=sports&countries=fr&languages=fr`
         );
 
+        console.log(response.data);
         setNews(response.data.articles);
         setLoading(false);
       } catch (error) {
