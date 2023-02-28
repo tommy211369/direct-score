@@ -77,7 +77,9 @@ function Home() {
     <div className="Home">
       <h1>Matchs en directs</h1>
 
-      <img src={l1Logo} alt="l1 logo" />
+      <div className="logo">
+        <img src={l1Logo} alt="l1 logo" />
+      </div>
 
       {loading ? (
         <Loading />
@@ -140,7 +142,9 @@ function Home() {
         </div>
       )}
 
-      <img src={plLogo} alt="premier league logo" />
+      <div className="logo">
+        <img src={plLogo} alt="premier league logo" />
+      </div>
 
       {loading ? (
         <Loading />
@@ -203,7 +207,9 @@ function Home() {
         </div>
       )}
 
-      <img src={ligaLogo} alt="liga logo" />
+      <div className="logo">
+        <img src={ligaLogo} alt="liga logo" />
+      </div>
 
       {loading ? (
         <Loading />
@@ -266,7 +272,9 @@ function Home() {
         </div>
       )}
 
-      <img src={bundesLogo} alt="bundesliga logo" />
+      <div className="logo">
+        <img src={bundesLogo} alt="bundesliga logo" />
+      </div>
 
       {loading ? (
         <Loading />
@@ -329,7 +337,9 @@ function Home() {
         </div>
       )}
 
-      <img src={serieALogo} alt="serie A logo" />
+      <div className="logo">
+        <img src={serieALogo} alt="serie A logo" />
+      </div>
 
       {loading ? (
         <Loading />

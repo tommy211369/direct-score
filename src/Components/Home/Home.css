@@ -8,12 +8,17 @@
   text-align: center;
 }
 
-.Home img {
-  height: 60px;
-  width: 80px;
-  object-fit: contain;
+.Home .logo {
+  width: fit-content;
+  margin: 0 auto;
   margin-top: 130px;
   margin-bottom: 20px;
+}
+
+.Home img {
+  height: 80px;
+  width: 100px;
+  object-fit: contain;
 }
 
 /* .Home h2 {
@@ -24,6 +29,7 @@
 
 .no-game-message {
   font-style: oblique;
+  text-align: center;
 }
 
 .Home a {
