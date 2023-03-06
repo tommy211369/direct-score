@@ -25,3 +25,27 @@
 
   background-color: #b4ffd7;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  .Footer div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Footer a {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 425px) {
+  .Footer div {
+    width: 90%;
+  }
+
+  .Footer a {
+    font-size: 12px;
+  }
+}

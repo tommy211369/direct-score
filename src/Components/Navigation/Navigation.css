@@ -1,5 +1,4 @@
 .Navigation {
-  background-color: #ffffff;
   list-style: none;
   width: 100%;
 }
@@ -22,4 +21,12 @@
   font-weight: bold;
   text-decoration: none;
   transition: all 0.2s ease;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1003px) {
+  .Navigation div:nth-child(1) {
+    display: none;
+  }
 }

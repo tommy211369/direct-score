@@ -1,0 +1,30 @@
+.MenuNav {
+  display: none;
+}
+
+.MenuNav .MenuIcon {
+  display: none;
+  margin: 20px;
+  padding: 5px;
+  border-radius: 20px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.MenuNav .MenuIcon:hover {
+  cursor: pointer;
+  background-color: rgb(220, 241, 244);
+}
+
+.MenuNav a {
+  color: rgb(24, 135, 153);
+  text-decoration: none;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1003px) {
+  .MenuNav,
+  .MenuNav .MenuIcon {
+    display: block;
+  }
+}
