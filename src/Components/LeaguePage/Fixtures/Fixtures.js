@@ -42,6 +42,7 @@ function Fixtures({ compet_ID }) {
         <div>
           <h1>Les matchs de {leagueName(compet_ID)} à venir</h1>
           <NextPreviousGamesButton page={page} setPage={setPage} />
+
           {fixtures.map((game) => {
             return (
               <div key={game.id}>
@@ -49,6 +50,7 @@ function Fixtures({ compet_ID }) {
               </div>
             );
           })}
+
           <NextPreviousGamesButton page={page} setPage={setPage} />
         </div>
       )}

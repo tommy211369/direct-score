@@ -3,3 +3,11 @@
   height: 250px;
   object-fit: contain;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 550px) {
+  .LeagueLogo img {
+    width: 100%;
+  }
+}

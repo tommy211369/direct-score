@@ -9,6 +9,7 @@
   font-size: 1.3em;
   padding-bottom: 10px;
   font-weight: bold;
+  text-align: center;
 }
 
 .History a {
@@ -26,4 +27,12 @@
 
 .History a:hover .game .teams span {
   color: #ffffff;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 320px) {
+  .History h1 {
+    font-size: 1.1em;
+  }
 }

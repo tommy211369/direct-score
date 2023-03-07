@@ -6,3 +6,17 @@
 .NextPreviousHistoryButton button {
   width: 20%;
 }
+
+/* MEDIA QUERIES */
+@media (max-width: 730px) {
+  .NextPreviousHistoryButton button {
+    width: 30%;
+  }
+}
+
+@media (max-width: 540px) {
+  .NextPreviousHistoryButton button {
+    width: 40%;
+    font-size: 12px;
+  }
+}

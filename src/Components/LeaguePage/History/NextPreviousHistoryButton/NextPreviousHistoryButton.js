@@ -15,7 +15,7 @@ function NextPreviousHistoryButton({
   getNextHistory,
 }) {
   return (
-    <Stack className="NextPreviousHistoryButton" direction="row" spacing={2}>
+    <Stack spacing={2} className="NextPreviousHistoryButton" direction="row">
       <Button
         onClick={() => {
           setLoading(true);

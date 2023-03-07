@@ -13,6 +13,7 @@
 
 .game .teams {
   width: 70%;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 10px;
   text-align: center;
@@ -29,4 +30,32 @@
   text-align: center;
   font-size: 0.8em;
   color: rgb(101, 101, 101);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 425px) {
+  .game .teams {
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .game .date_time {
+    font-size: 0.7em;
+  }
+
+  .game .teams span:nth-child(1),
+  .game .teams span:nth-child(3) {
+    display: block;
+    width: 45%;
+  }
+
+  .game .teams span:nth-child(2) {
+    width: 15%;
+  }
+
+  .game .stadium {
+    display: none;
+  }
 }

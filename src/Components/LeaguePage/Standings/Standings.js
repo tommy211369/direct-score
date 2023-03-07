@@ -64,7 +64,7 @@ function Standings({ setShowStandings, compet_ID }) {
             <div className="table-legend">
               <p>#</p>
               <p>Equipe</p>
-              <p>Pts</p>
+              <p className="points">Pts</p>
               <p>J</p>
               <p>G</p>
               <p>N</p>

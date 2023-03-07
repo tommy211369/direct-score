@@ -19,6 +19,8 @@
 .Standings .table {
   width: 90%;
   margin: 0 auto;
+  border: 1px solid black;
+  padding: 15px 0;
 }
 
 .Standings .table .table-legend {
@@ -53,6 +55,19 @@
   text-align: left;
 }
 
-.Standings .table .table-legend p:nth-child(3) {
+.Standings .table .table-legend .points {
   color: #cc1818;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  .Standings .table {
+    overflow: auto;
+  }
+  .Standings .table .table-legend,
+  .Standings .table .line {
+    font-size: 12px;
+    width: 611px;
+  }
 }
