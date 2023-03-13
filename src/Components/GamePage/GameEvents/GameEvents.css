@@ -44,3 +44,16 @@
 .GameEvents .event .substitution_own_goal span {
   display: inline;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 425px) {
+  .GameEvents .event p,
+  .GameEvents .event .time {
+    font-size: 0.7em;
+  }
+
+  .GameEvents .event img {
+    width: 20px;
+  }
+}

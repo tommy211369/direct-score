@@ -1,0 +1,15 @@
+.GameNavigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 620px) {
+  .GameNavigation {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -8,15 +8,7 @@
   border-radius: 20px;
   display: flex;
   background-color: rgb(24, 135, 153, 0.3);
-
-  justify-content: space-between;
-  align-items: center;
   text-align: center;
-}
-
-.H2HComparaison > div div,
-.H2HComparaison > div h1 {
-  width: 30%;
 }
 
 .H2HComparaison h1 {
@@ -26,6 +18,12 @@
 }
 
 /* Serie en Cours & Last H2H */
+.H2HComparaison .overallForm,
+.H2HComparaison .lastH2H {
+  justify-content: space-between;
+  align-items: center;
+}
+
 .H2HComparaison .overallForm span,
 .H2HComparaison .lastH2H span {
   display: inline-block;
@@ -53,35 +51,79 @@
 }
 
 /* Last 6 Games */
-.H2HComparaison .last_6_games > div {
-  width: 50%;
+.H2HComparaison .last_6_games {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
-.H2HComparaison li {
+.H2HComparaison .last_6_games > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.H2HComparaison .last_6_games h1 {
+  text-align: left;
+}
+
+.H2HComparaison .last_6_games > div:nth-child(1) {
+  margin-bottom: 30px;
+}
+
+.H2HComparaison .last_6_games > div div {
+  display: flex;
+  margin: 15px 0;
+  box-sizing: border-box;
+  overflow: auto;
+  padding-bottom: 15px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.H2HComparaison .last_6_games > div div::-webkit-scrollbar {
+  display: none;
+}
+
+.H2HComparaison .last_6_games li {
+  display: flex;
   align-items: center;
   list-style: none;
-  display: flex;
+  min-width: 250px;
   justify-content: space-between;
-  margin-bottom: 10px;
+  padding: 20px;
+  margin-right: 30px;
+  border: 1px solid black;
 }
 
-.H2HComparaison li span {
+.H2HComparaison .last_6_games li span {
   display: inline-block;
-  width: 30%;
+  overflow: auto;
+  width: 45%;
+  white-space: nowrap;
+  overflow: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.H2HComparaison .last_6_games li span::-webkit-scrollbar {
+  display: none;
 }
 
 .H2HComparaison .last_6_games li a {
+  display: flex;
   flex-direction: row;
   text-decoration: none;
   color: initial;
   justify-content: center;
-  /* padding: 3px; */
-  width: 32%;
+  width: 60%;
 }
 
 .H2HComparaison .last_6_games li a span {
   padding: 3px 5px;
   border-radius: 10px;
+
   background-color: rgba(60, 154, 175, 0.2);
   transition: all 0.2s ease-in-out;
 }
@@ -89,4 +131,72 @@
 .H2HComparaison .last_6_games li a:hover span {
   background-color: rgb(24, 135, 153, 0.6);
   color: white;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 730px) {
+  .H2HComparaison > div h1 {
+    font-size: 13px;
+  }
+
+  .H2HComparaison .overallForm span,
+  .H2HComparaison .lastH2H span {
+    font-size: 10px;
+    padding: 5px;
+    margin: 0 5px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 610px) {
+  .H2HComparaison {
+    margin: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .H2HComparaison {
+    margin: 0;
+  }
+
+  .H2HComparaison > div {
+    padding: 15px;
+  }
+
+  .H2HComparaison .overallForm span,
+  .H2HComparaison .lastH2H span {
+    font-size: 10px;
+    padding: 5px;
+    margin: 0 2px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 440px) {
+  .H2HComparaison > div h1,
+  .H2HComparaison .last_6_games span {
+    font-size: 11px;
+  }
+
+  .H2HComparaison .last_6_games > div div {
+    margin-bottom: 5px;
+  }
+
+  .H2HComparaison .last_6_games li {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .H2HComparaison .overallForm span,
+  .H2HComparaison .lastH2H span {
+    font-size: 8px;
+    padding: 3px;
+    margin: 0 2px;
+    width: 8px;
+    height: 8px;
+  }
 }

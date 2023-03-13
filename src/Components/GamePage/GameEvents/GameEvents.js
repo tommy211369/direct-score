@@ -20,7 +20,7 @@ function GameEvents({ gameEvents, gameInfos }) {
         .map((event) => {
           return (
             <div key={event.id} className="event">
-              <span>{event.time}'</span> :&nbsp;
+              <span className="time">{event.time}'</span> :&nbsp;
               {event.event === "YELLOW_CARD" ? (
                 <div className="yellow-red-card-goal">
                   <img src={yellow_card} alt="yellow_card" />

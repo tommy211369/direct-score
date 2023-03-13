@@ -12,8 +12,9 @@ import GameEvents from "./GameEvents/GameEvents";
 import GameInfos from "./GameInfos/GameInfos";
 import H2HComparaison from "./H2HComparaison/H2HComparaison";
 import GameStats from "./GameStats/GameStats";
+import GameNavigation from "./GameNavigation/GameNavigation";
 import Loading from "../Loading/Loading";
-import GameNavButton from "./GameNavButton/GameNavButton";
+import GameNavButton from "./GameNavigation/GameNavButton/GameNavButton";
 
 function GamePage({
   setShowHistory,
@@ -59,6 +60,7 @@ function GamePage({
       ) : (
         <>
           <GameInfos gameEvents={gameEvents} gameInfos={gameInfos} />
+
           <Link to={`/competition/${compet_ID}`}>
             <Button
               onClick={() => {
@@ -71,39 +73,17 @@ function GamePage({
             </Button>
           </Link>
 
-          <div className="navigation">
-            <GameNavButton
-              func={() => {
-                setShowComparaison(true);
-                setShowGameStats(false);
-              }}
-            >
-              {"Le Duel".toUpperCase()}
-            </GameNavButton>
-
-            <GameNavButton
-              func={() => {
-                setShowComparaison(false);
-                setShowGameStats(false);
-              }}
-            >
-              {"Déroulement du match".toUpperCase()}
-            </GameNavButton>
-
-            <GameNavButton
-              func={() => {
-                setShowComparaison(false);
-                setShowGameStats(true);
-              }}
-            >
-              {"Les Stats du Match".toUpperCase()}
-            </GameNavButton>
-          </div>
+          <GameNavigation
+            setShowComparaison={setShowComparaison}
+            setShowGameStats={setShowGameStats}
+          />
 
           {showComparaison && !showGameStats ? (
             <H2HComparaison
               homeID={gameInfos.home_id}
               awayID={gameInfos.away_id}
+              homeName={gameInfos.home_name}
+              awayName={gameInfos.away_name}
               compet_ID={compet_ID}
             />
           ) : !showComparaison && showGameStats ? (

@@ -28,3 +28,33 @@
 .GameStats .stat span:nth-child(2) {
   font-size: 1.2em;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  .GameStats .stat span:nth-child(1),
+  .GameStats .stat span:nth-child(3) {
+    font-size: 1.2em;
+  }
+
+  .GameStats .stat span:nth-child(2) {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 425px) {
+  .GameStats .stat span:nth-child(1),
+  .GameStats .stat span:nth-child(3) {
+    font-size: 1em;
+  }
+
+  .GameStats .stat span:nth-child(2) {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 375px) {
+  .GameStats .stat {
+    width: 90%;
+  }
+}

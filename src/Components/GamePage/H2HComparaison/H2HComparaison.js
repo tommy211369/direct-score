@@ -7,7 +7,7 @@ import axios from "axios";
 // Component
 import Loading from "../../Loading/Loading";
 
-function H2HComparaison({ homeID, awayID, compet_ID }) {
+function H2HComparaison({ homeID, awayID, compet_ID, homeName, awayName }) {
   const [loading, setLoading] = useState(true);
   const [homeTeam, setHomeTeam] = useState();
   const [awayTeam, setAwayTeam] = useState();
@@ -95,42 +95,50 @@ function H2HComparaison({ homeID, awayID, compet_ID }) {
 
           <div className="last_6_games">
             <div>
-              {homeTeamLast6.slice(0, 5).map((game) => {
-                return (
-                  <li key={game.id}>
-                    <span>{game.home_name}</span>
-                    <Link
-                      to={`/game/${game.id}`}
-                      state={{
-                        compet_ID: compet_ID,
-                      }}
-                    >
-                      <span>{game.ft_score}</span>
-                    </Link>
-                    <span>{game.away_name}</span>
-                  </li>
-                );
-              })}
+              <h1>5 derniers résultats de {homeName} </h1>
+              <div>
+                {homeTeamLast6.slice(0, 5).map((game) => {
+                  return (
+                    <li key={game.id}>
+                      <span>{game.home_name}</span>
+
+                      <Link
+                        to={`/game/${game.id}`}
+                        state={{
+                          compet_ID: compet_ID,
+                        }}
+                      >
+                        <span>{game.ft_score}</span>
+                      </Link>
+
+                      <span>{game.away_name}</span>
+                    </li>
+                  );
+                })}
+              </div>
             </div>
-            <h1>Derniers résultats des équipes</h1>
+
             <div>
-              {awayTeamLast6.slice(0, 5).map((game) => {
-                return (
-                  <li key={game.id}>
-                    <span>{game.home_name}</span>
-                    <Link
-                      to={`/game/${game.id}`}
-                      state={{
-                        status: "FINISHED",
-                        compet_ID: compet_ID,
-                      }}
-                    >
-                      <span>{game.ft_score}</span>
-                    </Link>
-                    <span>{game.away_name}</span>
-                  </li>
-                );
-              })}
+              <h1>5 derniers résultats de {awayName} </h1>
+              <div>
+                {awayTeamLast6.slice(0, 5).map((game) => {
+                  return (
+                    <li key={game.id}>
+                      <span>{game.home_name}</span>
+                      <Link
+                        to={`/game/${game.id}`}
+                        state={{
+                          status: "FINISHED",
+                          compet_ID: compet_ID,
+                        }}
+                      >
+                        <span>{game.ft_score}</span>
+                      </Link>
+                      <span>{game.away_name}</span>
+                    </li>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
@@ -158,7 +166,7 @@ function H2HComparaison({ homeID, awayID, compet_ID }) {
                 }
               })}
             </div>
-            <h1>Derniers affrontements entre les équipes</h1>
+            <h1>Derniers duels</h1>
             <div>
               {awayTeam.h2h_form.map((form, index) => {
                 if (form === "L") {

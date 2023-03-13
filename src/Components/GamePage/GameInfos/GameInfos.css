@@ -75,3 +75,37 @@
 .GameInfos .teams .score span:nth-child(2) {
   font-size: 0.8em;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  .GameInfos .teams {
+    width: 98%;
+  }
+
+  .GameInfos .teams > div {
+    width: 45%;
+    text-align: center;
+  }
+
+  .GameInfos .teams > div:nth-child(1) p,
+  .GameInfos .teams > div:nth-child(3) p {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .GameInfos .teams .score span:nth-child(1) {
+    font-size: 1.5em;
+  }
+
+  .GameInfos .teams .score span:nth-child(2) {
+    font-size: 0.6em;
+  }
+}
+
+@media (max-width: 425px) {
+  .GameInfos .teams > div .scorerList {
+    display: none;
+  }
+}
