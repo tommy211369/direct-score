@@ -10,10 +10,10 @@ Follow this link to check my project : https://directscore.netlify.app/
 
 My personal fullstack project using the <a href="https://live-score-api.com/">Live-score</a> API.  
 Follow the livescores and fixtures of Premier League, ligue 1, Serie A, La Liga and Bundesliga.  
-Made with React, using React Router for browsing, Axios for requests, icons from FontAwesome and Material-UI.
-
-Database : MongoDB.  
-Deploy with Netlify
+Made with React.js, using React Router for browsing, Axios for requests, icons from FontAwesome and Material-UI.  
+Web server created with Node.js and Express.js.
+ 
+Deployed with Netlify
 Back-end deployed on Render
 
 ## Screenshots
