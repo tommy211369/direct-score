@@ -30,7 +30,7 @@ function Groups() {
       try {
         const response = await axios.request(options);
 
-        console.log("Groupes :", response.data.data.table);
+        // console.log("Groupes :", response.data.data.table);
         setGroups(response.data.data.table);
         groupsOrganisation(response.data.data.table);
       } catch (error) {
@@ -74,7 +74,7 @@ function Groups() {
       }
     }
 
-    console.log("Groupe A :", groupA);
+    // console.log("Groupe A :", groupA);
     setLoading(false);
   };
 

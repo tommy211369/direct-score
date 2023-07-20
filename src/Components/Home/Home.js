@@ -54,11 +54,11 @@ function Home() {
           `https://directscore.onrender.com/livegames?competition_id=4`
         );
 
-        console.log(responseL1.data);
-        console.log(responsePL.data);
-        console.log(responseLiga.data);
-        console.log(responseBundesliga.data);
-        console.log(responseSerieA.data);
+        // console.log(responseL1.data);
+        // console.log(responsePL.data);
+        // console.log(responseLiga.data);
+        // console.log(responseBundesliga.data);
+        // console.log(responseSerieA.data);
 
         setL1Games(responseL1.data);
         setPLGames(responsePL.data);

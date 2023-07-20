@@ -18,7 +18,7 @@ function News() {
           `http://api.mediastack.com/v1/news?access_key=2d4a2c9411b719918b2a6452b68edb61&categories=sports&countries=fr&languages=fr`
         );
 
-        console.log(response.data);
+        // console.log(response.data);
         setNews(response.data.articles);
         setLoading(false);
       } catch (error) {

@@ -24,7 +24,7 @@ function Standings({ setShowStandings, compet_ID }) {
           `https://directscore.onrender.com/standings?competition_id=${compet_ID}`
         );
 
-        console.log(response.data.table);
+        // console.log(response.data.table);
         setStandings(response.data.table);
         setLoading(false);
       } catch (error) {
